@@ -1,0 +1,30 @@
+/*==================== HEAD ====================*/
+.head {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100vh;
+}
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+  -o-object-fit: fill;
+}
+
+.head-title {
+  top: 45%;
+  right: 15%;
+  position: absolute;
+  z-index: var(--z-tooltip);
+  background: linear-gradient(var(--subtitle-color), #ffffff);
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.6;
+  font-size: var(--big-size);
+  font-weight: var(--font-bold);
+}
+/*==================== HEAD ====================*/
