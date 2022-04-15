@@ -1,0 +1,190 @@
+/*==================== HEAD ====================*/
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 2rem;
+}
+.head-img,
+.head-data {
+  text-align: center;
+  position: absolute;
+  z-index: var(--z-back);
+}
+.head-img {
+  transform: translateY(-15%);
+  width: 150vh;
+  height: 150vh;
+}
+
+.head-title {
+  font-size: var(--big-size);
+  font-weight: var(--font-bold);
+  color: var(--primary-color);
+  letter-spacing: 2rem;
+  opacity: 0.5;
+}
+.head-subtitle {
+  text-align: left;
+  color: var(--text-color);
+  font-size: var(--medium-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 1rem;
+  transform: translateY(-2rem);
+}
+.head-mess {
+  font-size: var(--small-size);
+  font-weight: var(--font-normal);
+  color: var(--white-color);
+  width: 50px;
+}
+.cursor {
+  color: var(--white-color);
+}
+/*==================== HEAD ====================*/
+
+/*==================== GOSHOP ====================*/
+.goshop {
+  background-color: var(--body-color);
+}
+.goshop-container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3rem;
+}
+.goshop-data {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.goshop-card {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: var(--title-color);
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--subtitle-color);
+  box-shadow: 0 0 20px var(--subtitle-color);
+}
+.goshop-card div {
+  font-size: var(--smaller-size);
+  font-weight: var(--font-samll);
+}
+.goshop-card span {
+  font-size: var(--smallest-size);
+  font-weight: var(--font-medium);
+}
+.goshop-card i {
+  font-size: var(--medium-size);
+  color: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.goshop-card-1,
+.goshop-card-4 {
+  transform: translateX(4rem);
+}
+.goshop img {
+  width: 400px;
+  height: 400px;
+  filter: drop-shadow(1px 1px 10px var(--dark-color));
+  -ms-filter: drop-shadow(1px 1px 10px var(--dark-color));
+}
+/*==================== GOSHOP ====================*/
+
+/*==================== SLOGANS ====================*/
+.slogans {
+  min-height: auto;
+  background-color: var(--dark-color);
+}
+.slogans-container {
+  display: flex;
+  flex-direction: column;
+}
+.slogans-content {
+  display: flex;
+  flex-direction: row;
+  column-gap: 7rem;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+}
+.slogan-card-w {
+  width: 500px;
+  height: 350px;
+  z-index: var(--z-tooltip);
+  opacity: 0.5;
+}
+.slogan-card-h {
+  width: 350px;
+  height: 500px;
+}
+.slogan-mess {
+  position: absolute;
+  text-align: center;
+  background: linear-gradient(var(--subtitle-color), var(--text-color));
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.7;
+  font-size: var(--big-size);
+  font-weight: var(--font-bold);
+}
+.scroll-top-1 {
+  transform: translateY(-7rem);
+  column-gap: 2rem;
+}
+.scroll-top-2 {
+  transform: translateY(-14rem);
+  column-gap: 6rem;
+}
+
+.slogans-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-7rem);
+  width: 100%;
+  height: 15vh;
+  font-size: var(--big-size);
+  column-gap: 3rem;
+}
+.slogans-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--subtitle-color);
+  font-size: var(--medium-size);
+  font-weight: var(--font-bold);
+  opacity: 0.2;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.slogans-link i {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+.slogans-link:hover {
+  opacity: 0.7;
+}
+
+.slogans-bottom {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/design/slogans\ \(7\).jpg");
+  background-size: cover;
+  background-position: center;
+}
+.mess-bottom {
+  opacity: 0.6;
+  color: var(--body-color);
+}
+/*==================== SLOGANS ====================*/

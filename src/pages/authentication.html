@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/bases.styles.css" />
+    <link rel="stylesheet" href="../assets/css/authentication.css" />
+    <title>EShop - Sign In</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header">
+      <h1 class="signin-logo">EShop</h1>
+    </header>
+    <!--==================== HEADER ====================-->
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <div class="authen-left">
+        <!--==================== SIGNIN@FORM ====================-->
+        <form class="form show-form" id="signin">
+          <div class="signin-form">
+            <h2 class="signin-title">Sign in</h2>
+
+            <div>
+              <input
+                class="signin-input"
+                name="email"
+                placeholder="Email"
+                type="mail"
+                required
+              />
+              <input
+                class="signin-input"
+                name="password"
+                placeholder="Password"
+                type="password"
+                required
+              />
+              <input
+                class="signin-input button-in"
+                type="submit"
+                value="Sign in"
+              />
+            </div>
+          </div>
+          <div class="signin-line">
+            <div class="l1"></div>
+            or
+            <div class="l2"></div>
+          </div>
+          <div class="signin-social">
+            <div class="social-in">
+              <i class="uil uil-google"></i>
+            </div>
+            <div class="social-in">
+              <i class="uil uil-github"></i>
+            </div>
+            <div class="social-in">
+              <i class="uil uil-facebook-f"></i>
+            </div>
+          </div>
+
+          <div class="signin-mess">
+            You have an account? <span id="go-signup">Sign up</span>
+          </div>
+        </form>
+        <!--==================== SIGNIN@FORM ====================-->
+
+        <!--==================== SIGNUP@FORM ====================-->
+        <form class="form hidden-form" id="signup">
+          <div class="signup-form">
+            <h2 class="signup-title">Sign up</h2>
+
+            <div>
+              <input
+                class="signup-input"
+                name="username"
+                placeholder="Username"
+                type="text"
+                required
+              />
+              <input
+                class="signup-input"
+                name="email"
+                placeholder="example@gmail.com"
+                type="email"
+                required
+              />
+              <input
+                class="signup-input"
+                name="password"
+                placeholder="Password"
+                type="password"
+                required
+              />
+              <input
+                class="signup-input button-up"
+                type="submit"
+                value="Sign up"
+              />
+            </div>
+          </div>
+          <div class="signup-line">
+            <div class="l1"></div>
+            or
+            <div class="l2"></div>
+          </div>
+          <div class="signup-social">
+            <div class="social-up">
+              <i class="uil uil-google"></i>
+            </div>
+            <div class="social-up">
+              <i class="uil uil-github"></i>
+            </div>
+            <div class="social-up">
+              <i class="uil uil-facebook-f"></i>
+            </div>
+          </div>
+
+          <div class="signup-mess">
+            Already have an account? <span id="go-signin">Sign in</span>
+          </div>
+        </form>
+        <!--==================== SIGNUP@FORM ====================-->
+      </div>
+
+      <div class="authen-right"></div>
+    </main>
+    <!--==================== MAIN ====================-->
+
+    <!--==================== SCRIPTS ====================-->
+    <script src="../assets/js/authentication.js"></script>
+    <!--==================== SCRIPTS ====================-->
+  </body>
+</html>
