@@ -27,14 +27,24 @@
         <div class="head-content">
           <ul class="head-list">
             <li class="head-item">
-              <a href="#articles" class="head-link"
-                ><i class="uil uil-angle-left-b"></i>Collections</a
+              <a
+                href="#articles"
+                id="head-collection"
+                class="head-link"
+                data-filter=".collection"
               >
+                <i class="uil uil-angle-left-b"></i>Collections
+              </a>
             </li>
             <li class="head-item">
-              <a href="#articles" class="head-link"
-                ><i class="uil uil-angle-left-b"></i>Tops</a
+              <a
+                href="#articles"
+                id="head-top"
+                class="head-link"
+                data-filter=".top"
               >
+                <i class="uil uil-angle-left-b"></i>Tops
+              </a>
             </li>
           </ul>
         </div>
@@ -43,9 +53,22 @@
       <!--==================== HEAD ====================-->
 
       <!--==================== ARTICLES ====================-->
-      <section class="articles section">
-        <div class="articles-filter">Filter</div>
+      <section id="articles" class="articles section">
+        <span class="section-subtitle">Clothing</span>
+        <h1 class="section-title">Mens</h1>
         <div class="articles-container">
+          <div class="articles-filter">
+            <span
+              id="filter-collection"
+              class="filter-btn"
+              data-filter=".collection"
+            >
+              Collections
+            </span>
+            <span id="filter-top" class="filter-btn" data-filter=".top">
+              Tops
+            </span>
+          </div>
           <div id="articles-content" class="articles-content"></div>
         </div>
       </section>
@@ -58,6 +81,7 @@
     <!--==================== FOOTER ====================-->
 
     <!--==================== SCRIPTS ====================-->
+    <script src="../assets/import.js/mixitup.js"></script>
     <script src="../assets/import.js/navbar.js"></script>
     <script src="../assets/js/men.js"></script>
     <!--==================== SCRIPTS ====================-->
