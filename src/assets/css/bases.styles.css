@@ -16,6 +16,11 @@
   --dark-color: #121212;
   --white-color: #f0fcf3;
 
+  /*
+    light:#eaedf1;
+    dark:#cbcbc9;
+  */
+
   --box-shadow: -1px 1px 10px #afafaf;
   --text-shadow: -1px 1px 3px var(--title-color);
 
@@ -23,7 +28,7 @@
   --font-semi-bold: 700;
   --font-medium: 500;
   --font-normal: 300;
-  --font-samll: 100;
+  --font-small: 100;
 
   --logo-size: 2.25rem;
   --logo-size-h: 3rem;
@@ -114,5 +119,77 @@ footer {
   margin-bottom: 2rem;
 }
 
-/*==================== HEAD ====================*/
-/*==================== HEAD ====================*/
+/*==================== ARTICLES ====================*/
+.articles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.articles-container {
+  width: 100%;
+  height: auto;
+}
+.articles-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem 2rem;
+}
+.articles-cards {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--text-color);
+  padding: 0.5rem 0.75rem;
+  transition: 0.3s ease-in-out;
+}
+.articles-cards:hover {
+  box-shadow: 0 0 10px var(--text-color);
+}
+
+.articles-img {
+  position: absolute;
+  transform: translateY(-4rem);
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(-1px 1px 1px var(--white-color));
+  transition: 0.3s ease-in-out;
+}
+.articles-cards:hover .articles-img {
+  transform: scale(1.2) translateY(-4rem);
+}
+
+.articles-data {
+  margin-top: 2rem;
+}
+.articles-name {
+  font-size: var(--small-size);
+  font-weight: var(--font-bold);
+  color: var(--title-color);
+}
+.articles-price {
+  font-size: var(--smallest-size);
+  font-weight: var(--font-normal);
+  color: var(--subtitle-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.articles-icon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: var(--small-size);
+}
+/*==================== ARTICLES ====================*/
