@@ -1,4 +1,4 @@
-function loadNavBar(active) {
+export function loadNavBar(active) {
   const navBar = document.createElement("header"),
     footer = document.createElement("footer"),
     headerCont = document.getElementById("header-container"),

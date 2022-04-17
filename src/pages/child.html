@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="../assets/css/child.css" />
     <link rel="stylesheet" href="../assets/css/product.css" />
     <title>EShop - Childs</title>
+
+    <script type="module">
+      import { loadNavBar } from "../assets/import.js/navbar.js";
+      loadNavBar(3);
+    </script>
   </head>
-  <body onload="loadNavBar(3)">
+  <body>
     <!--==================== HEADER ====================-->
     <div id="header-container"></div>
     <!--==================== HEADER ====================-->
@@ -34,18 +39,10 @@
       <section id="products" class="products section">
         <span class="section-subtitle">Clothing Childs</span>
         <div class="products-container">
-          <!-- <div class="products-filter">
-            <span
-              id="filter-collection"
-              class="filter-btn"
-              data-filter=".collection"
-            >
-              Collections
-            </span>
-            <span id="filter-top" class="filter-btn" data-filter=".top">
-              Tops
-            </span>
-          </div> -->
+          <div class="products-filter">
+            <span class="filter-btn" data-filter=".boy"> Boys </span>
+            <span class="filter-btn" data-filter=".girl"> Girls </span>
+          </div>
           <div id="products-content" class="products-content"></div>
         </div>
       </section>

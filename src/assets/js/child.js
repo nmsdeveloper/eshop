@@ -1,162 +1,165 @@
 import { listProducts } from "../import.js/product.js";
 
-const articlesContent = document.getElementById("products-content"),
+const productsContent = document.getElementById("products-content"),
   lists = [
     {
-      type: "child",
-      image: "../assets/images/enfants/enfant (4).png",
-      name: "Haut 6",
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (6).png",
+      name: "Garcon 6",
+      price: 8500,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (8).png",
+      name: "Garcon 8",
+      price: 11000,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (6).png",
+      name: "Fille 6",
       price: 8000,
     },
     {
-      type: "child",
-      image: "../assets/images/enfants/enfant (5).png",
-      name: "Haut 2",
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (2).png",
+      name: "Fille 2",
       price: 14000,
     },
     {
-      type: "child",
-      image: "../assets/images/enfants/enfant (25).png",
-      name: "Haut 3",
-      price: 4000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (3).png",
-      name: "Ensemble 8",
-      price: 11000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (2).png",
-      name: "Ensemble 18",
-      price: 4000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (23).png",
-      name: "Ensemble 14",
-      price: 11000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (24).png",
-      name: "Ensemble 9",
-      price: 12000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (20).png",
-      name: "Ensemble 3",
-      price: 7500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (1).png",
-      name: "Ensemble 6",
-      price: 8500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (21).png",
-      name: "Ensemble 12",
-      price: 4500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (22).png",
-      name: "Haut 12",
-      price: 24000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (8).png",
-      name: "Ensemble 2",
-      price: 10000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (9).png",
-      name: "Ensemble 5",
-      price: 10500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (10).png",
-      name: "Haut 9",
-      price: 3500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (6).png",
-      name: "Ensemble 7",
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (7).png",
+      name: "Garcon 7",
       price: 8000,
     },
     {
-      type: "child",
-      image: "../assets/images/enfants/enfant (16).png",
-      name: "Haut 5",
-      price: 8500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (7).png",
-      name: "Haut 8",
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (8).png",
+      name: "Fille 8",
       price: 13500,
     },
     {
-      type: "child",
-      image: "../assets/images/enfants/enfant (18).png",
-      name: "Haut 1",
-      price: 12000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (14).png",
-      name: "Ensemble 10",
-      price: 14000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (15).png",
-      name: "Ensemble 1",
-      price: 14000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (19).png",
-      name: "Haut 10",
-      price: 14000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (17).png",
-      name: "Ensemble 17",
-      price: 5000,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (11).png",
-      name: "Ensemble 4",
-      price: 14500,
-    },
-    {
-      type: "child",
-      image: "../assets/images/enfants/enfant (12).png",
-      name: "Haut 13",
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (2).png",
+      name: "Garcon 2",
       price: 10000,
     },
     {
-      type: "child",
-      image: "../assets/images/enfants/enfant (13).png",
-      name: "Haut 11",
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (5).png",
+      name: "Garcon 5",
+      price: 10500,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (9).png",
+      name: "Fille 9",
       price: 3500,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (4).png",
+      name: "Garcon 4",
+      price: 14500,
+    },
+
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (11).png",
+      name: "Fille 11",
+      price: 3500,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (10).png",
+      name: "Garcon 10",
+      price: 14000,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (1).png",
+      name: "Garcon 1",
+      price: 14000,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (5).png",
+      name: "Fille 5",
+      price: 8500,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (1).png",
+      name: "Fille 1",
+      price: 12000,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (10).png",
+      name: "Fille 10",
+      price: 14000,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (3).png",
+      name: "Garcon 3",
+      price: 7500,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (12).png",
+      name: "Garcon 12",
+      price: 4500,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (14).png",
+      name: "Garcon 14",
+      price: 11000,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (9).png",
+      name: "Garcon 9",
+      price: 12000,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (3).png",
+      name: "Fille 3",
+      price: 4000,
+    },
+
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (13).png",
+      name: "Garcon 13",
+      price: 3000,
+    },
+
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (4).png",
+      name: "Fille 4",
+      price: 9000,
+    },
+    {
+      type: "boy",
+      image: "../assets/images/enfants/boys/boy (11).png",
+      name: "Garcon 11",
+      price: 2500,
+    },
+    {
+      type: "girl",
+      image: "../assets/images/enfants/girls/girl (7).png",
+      name: "Fille 7",
+      price: 2500,
     },
   ];
 
-articlesContent.innerHTML = listProducts(lists);
+productsContent.innerHTML = listProducts(lists);
 
-var mixerChild = mixitup(".products-content", {
+var mixerChilds = mixitup(".products-content", {
   selectors: {
     target: ".products-cards",
   },
@@ -165,16 +168,10 @@ var mixerChild = mixitup(".products-content", {
   },
 });
 
-// const filterLink = document.querySelectorAll(".filter-btn");
-//   headCollection = document.getElementById("head-collection"),
-//   headTop = document.getElementById("head-top");
+const filterLink = document.querySelectorAll(".filter-btn");
 
-// headCollection.onclick = () => filterActive(filterLink[0]);
-// headTop.onclick = () => filterActive(filterLink[1]);
-
-// filterLink.forEach((n) => n.addEventListener("click", () => filterActive(n)));
-
-// function filterActive(n) {
-//   filterLink.forEach((l) => l.classList.remove("filter-active"));
-//   n.classList.add("filter-active");
-// }
+filterLink.forEach((n) => n.addEventListener("click", filterActive));
+function filterActive() {
+  filterLink.forEach((l) => l.classList.remove("filter-active"));
+  this.classList.add("filter-active");
+}
