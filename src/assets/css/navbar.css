@@ -2,6 +2,14 @@
 .nav-toggle,
 .nav-close {
   display: none;
+  font-size: var(--medium-size);
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.nav-toggle:hover,
+.nav-close:hover {
+  color: var(--primary-color);
 }
 
 .header {
@@ -149,3 +157,123 @@ footer {
   color: var(--subtitle-color);
 }
 /*==================== FOOTER ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+@media screen and (max-width: 767px) {
+  :root {
+    --logo-size: 2.25rem;
+    --logo-size-h: 2.5rem;
+    --logo-size-f: 1.5rem;
+
+    --big-size: 3.5rem;
+    --medium-size: 1.5rem;
+    --normal-size: 1.25rem;
+    --small-size: 1rem;
+    --smaller-size: 0.85rem;
+    --smallest-size: 0.7rem;
+    --tiny-size: 0.65rem;
+  }
+
+  /*==================== NAVBAR ====================*/
+  @keyframes showToggle {
+    0% {
+      display: none;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      display: block;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes hiddenToggle {
+    0% {
+      display: block;
+    }
+    100% {
+      display: none;
+    }
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .show-toggle {
+    display: block;
+    transform: translateX(0);
+    opacity: 1;
+    animation: 0.5s showToggle linear;
+  }
+  .hidden-toggle {
+    display: none;
+    animation: 0.5s hiddenToggle linear;
+  }
+
+  .nav-list {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    top: var(--header-nav);
+    right: -100%;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    row-gap: 2rem;
+    background-color: var(--body-color);
+    transition: 0.5s ease-in-out;
+  }
+  /*==================== NAVBAR ====================*/
+
+  /*==================== FOOTER ====================*/
+  .footer-container {
+    padding: 1rem 2.5rem;
+    grid-template-columns: 15% 85%;
+  }
+  .footer-content {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /*==================== FOOTER ====================*/
+
+  .section {
+    min-height: 80vh;
+    padding: 1rem 2rem;
+  }
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
+@media screen and (max-width: 467px) {
+  :root {
+    --logo-size: 1.75rem;
+    --logo-size-h: 2rem;
+    --logo-size-f: 1.25rem;
+
+    --big-size: 2.5rem;
+    --medium-size: 1.25rem;
+    --normal-size: 1rem;
+    --small-size: 0.9rem;
+    --smaller-size: 0.8rem;
+    --smallest-size: 0.65rem;
+    --tiny-size: 0.6rem;
+  }
+
+  .section {
+    min-height: 40vh;
+    padding: 0.5rem 1.5rem;
+  }
+
+  /*==================== FOOTER ====================*/
+  .footer-container {
+    padding: 1rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /*==================== FOOTER ====================*/
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/

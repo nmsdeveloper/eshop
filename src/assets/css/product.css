@@ -104,3 +104,13 @@
   color: var(--primary-color);
 }
 /*==================== PRODUCTS ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+@media screen and (max-width: 767px) {
+  .products-content {
+    -ms-grid-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 2rem;
+  }  
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/

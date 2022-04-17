@@ -30,11 +30,11 @@ export function loadNavBar(active) {
           <i id="nav-authen" class="uil uil-user uil-icon"></i>
         </div>
 
-        <div class="nav-close">
+        <div id="nav-close" class="nav-close">
           <i class="uil uil-times"></i>
         </div>
 
-        <div class="nav-toggle">
+        <div id="nav-toggle" class="nav-toggle">
           <i class="uil uil-bars"></i>
         </div>
       </nav>`,
@@ -144,5 +144,28 @@ export function loadNavBar(active) {
   window.onscroll = () => {
     if (window.scrollY >= 300) header.classList.add("is-scroll");
     else header.classList.remove("is-scroll");
+  };
+
+  const navToggle = document.getElementById("nav-toggle"),
+    navClose = document.getElementById("nav-close"),
+    navList = document.getElementById("nav-list");
+
+  navToggle.onclick = () => {
+    if (navToggle) {
+
+      navToggle.classList = "nav-toggle hidden-toggle";
+      navClose.classList = "nav-close show-toggle";
+
+      navList.style.right = "0";
+    }
+  };
+
+  navClose.onclick = () => {
+    if (navClose) {
+      navToggle.classList = "nav-toggle show-toggle";
+      navClose.classList = "nav-close hidden-toggle";
+
+      navList.style.right = "-100%";
+    }
   };
 }

@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  column-gap: 2rem;
 }
+
 .head-img,
 .head-data {
   text-align: center;
@@ -33,11 +33,11 @@
   letter-spacing: 1rem;
   transform: translateY(-2rem);
 }
+
 .head-mess {
   font-size: var(--small-size);
   font-weight: var(--font-normal);
   color: var(--white-color);
-  width: 50px;
 }
 .cursor {
   color: var(--white-color);
@@ -151,7 +151,6 @@
   transform: translateY(-7rem);
   width: 100%;
   height: 15vh;
-  font-size: var(--big-size);
   column-gap: 3rem;
 }
 .slogans-link {
@@ -188,3 +187,155 @@
   color: var(--body-color);
 }
 /*==================== SLOGANS ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+@media screen and (max-width: 767px) {
+  /*==================== HEAD ====================*/
+  .head-img {
+    transform: translateY(-15%);
+    width: 110vh;
+    height: 110vh;
+  }
+  .head-subtitle {
+    text-align: center;
+    transform: translateY(-1rem);
+  }
+  /*==================== HEAD ====================*/
+
+  /*==================== GOSHOP ====================*/
+  .goshop-container {
+    column-gap: 1.5rem;
+  }
+
+  .goshop-data {
+    row-gap: 1rem;
+  }
+
+  .goshop-card {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .goshop img {
+    width: 300px;
+    height: 300px;
+  }
+  /*==================== GOSHOP ====================*/
+
+  /*==================== SLOGANS ====================*/
+  .slogans-content {
+    column-gap: 4rem;
+  }
+
+  .slogan-card-w {
+    width: 400px;
+    height: 250px;
+  }
+  .slogan-card-h {
+    width: 250px;
+    height: 400px;
+  }
+
+  .slogan-mess {
+    font-size: calc(var(--medium-size) + 1rem);
+  }
+
+  .slogans-social {
+    height: 10vh;
+    column-gap: 2rem;
+  }
+  .slogans-link {
+    font-size: var(--small-size);
+  }
+  .slogans-link i {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+  /*==================== SLOGANS ====================*/
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
+@media screen and (max-width: 467px) {
+  /*==================== HEAD ====================*/
+  .head-img {
+    transform: translateY(-20%);
+    width: 50vh;
+    height: 50vh;
+  }
+  .head-title {
+    letter-spacing: 1rem;
+  }
+  .head-subtitle {
+    transform: translateY(-0.25rem);
+  }
+  .head-mess {
+    font-size: var(--small-size);
+    color: var(--white-color);
+  }
+  /*==================== HEAD ====================*/
+
+  /*==================== GOSHOP ===========2========*/
+  .goshop-container {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .goshop-data {
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+
+  .goshop-card {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .goshop-card i {
+    margin-right: 0;
+  }
+
+  .goshop-card-1,
+  .goshop-card-4 {
+    transform: translateY(4rem);
+  }
+
+  .goshop img {
+    width: 200px;
+    height: 200px;
+  }
+  /*==================== GOSHOP ====================*/
+
+  /*==================== SLOGANS ====================*/
+  .slogans-content {
+    column-gap: 2rem;
+  }
+
+  .slogan-card-w {
+    width: 300px;
+    height: 150px;
+  }
+  .slogan-card-h {
+    width: 150px;
+    height: 300px;
+  }
+
+  .slogan-mess {
+    font-size: calc(var(--medium-size) + 0.5rem);
+  }
+
+  .slogans-social {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 7vh;
+  }
+  .slogans-link i {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .slogans-bottom {
+    height: 400px;
+  }
+  /*==================== SLOGANS ====================*/
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
