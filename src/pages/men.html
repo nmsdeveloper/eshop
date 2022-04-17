@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/bases.styles.css" />
     <link rel="stylesheet" href="../assets/css/navbar.css" />
     <link rel="stylesheet" href="../assets/css/men.css" />
+    <link rel="stylesheet" href="../assets/css/product.css">
     <title>EShop - Mens</title>
   </head>
   <body onload="loadNavBar(1)">
@@ -28,7 +29,7 @@
           <ul class="head-list">
             <li class="head-item">
               <a
-                href="#articles"
+                href="#products"
                 id="head-collection"
                 class="head-link"
                 data-filter=".collection"
@@ -38,7 +39,7 @@
             </li>
             <li class="head-item">
               <a
-                href="#articles"
+                href="#products"
                 id="head-top"
                 class="head-link"
                 data-filter=".top"
@@ -52,12 +53,11 @@
       </section>
       <!--==================== HEAD ====================-->
 
-      <!--==================== ARTICLES ====================-->
-      <section id="articles" class="articles section">
-        <span class="section-subtitle">Clothing</span>
-        <h1 class="section-title">Mens</h1>
-        <div class="articles-container">
-          <div class="articles-filter">
+      <!--==================== PRODUCTS ====================-->
+      <section id="products" class="products section">
+        <span class="section-subtitle">Clothing Mens</span>
+        <div class="products-container">
+          <div class="products-filter">
             <span
               id="filter-collection"
               class="filter-btn"
@@ -69,10 +69,10 @@
               Tops
             </span>
           </div>
-          <div id="articles-content" class="articles-content"></div>
+          <div id="products-content" class="products-content"></div>
         </div>
       </section>
-      <!--==================== ARTICLES ====================-->
+      <!--==================== PRODUCTS ====================-->
     </main>
     <!--==================== MAIN ====================-->
 
@@ -83,7 +83,7 @@
     <!--==================== SCRIPTS ====================-->
     <script src="../assets/import.js/mixitup.js"></script>
     <script src="../assets/import.js/navbar.js"></script>
-    <script src="../assets/js/men.js"></script>
+    <script type="module" src="../assets/js/men.js"></script>
     <!--==================== SCRIPTS ====================-->
   </body>
 </html>

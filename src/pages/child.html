@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/bases.styles.css" />
     <link rel="stylesheet" href="../assets/css/navbar.css" />
-    <link rel="stylesheet" href="../assets/css/child.css">
+    <link rel="stylesheet" href="../assets/css/child.css" />
+    <link rel="stylesheet" href="../assets/css/product.css" />
     <title>EShop - Childs</title>
   </head>
   <body onload="loadNavBar(3)">
@@ -16,14 +17,39 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
-    <!--==================== HEAD ====================-->
-    <section class="head">
-      <video loop autoplay muted src="../assets/videos/videos (4).mp4"></video>
-    
-      <span class="head-title">ESHOPPING - CHILDS</span>
-    </section>
-    <!--==================== HEAD ====================-->
+      <!--==================== HEAD ====================-->
+      <section class="head">
+        <video
+          loop
+          autoplay
+          muted
+          src="../assets/videos/videos (4).mp4"
+        ></video>
 
+        <span class="head-title">ESHOPPING - CHILDS</span>
+      </section>
+      <!--==================== HEAD ====================-->
+
+      <!--==================== PRODUCTS ====================-->
+      <section id="products" class="products section">
+        <span class="section-subtitle">Clothing Childs</span>
+        <div class="products-container">
+          <!-- <div class="products-filter">
+            <span
+              id="filter-collection"
+              class="filter-btn"
+              data-filter=".collection"
+            >
+              Collections
+            </span>
+            <span id="filter-top" class="filter-btn" data-filter=".top">
+              Tops
+            </span>
+          </div> -->
+          <div id="products-content" class="products-content"></div>
+        </div>
+      </section>
+      <!--==================== PRODUCTS ====================-->
     </main>
     <!--==================== MAIN ====================-->
 
@@ -32,8 +58,9 @@
     <!--==================== FOOTER ====================-->
 
     <!--==================== SCRIPTS ====================-->
+    <script src="../assets/import.js/mixitup.js"></script>
     <script src="../assets/import.js/navbar.js"></script>
-    <script src="../assets/js/child.js"></script>
+    <script type="module" src="../assets/js/child.js"></script>
     <!--==================== SCRIPTS ====================-->
   </body>
 </html>
