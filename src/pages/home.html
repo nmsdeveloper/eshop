@@ -10,7 +10,10 @@
     <title>EShop - Home</title>
 
     <script type="module">
+      import { customizeUrl } from "../assets/import.js/customize.url.js";
       import { loadNavBar } from "../assets/import.js/navbar.js";
+
+      customizeUrl("home");
       loadNavBar(0);
     </script>
   </head>

@@ -9,19 +9,19 @@ export function loadNavBar(active) {
 
         <ul class="nav-list" id="nav-list">
           <li class="nav-item">
-            <a href="./home.html" class="nav-link">Home</a>
+            <a href="/src/pages/home.html" class="nav-link">Home</a>
           </li>
 
           <li class="nav-item">
-            <a href="./men.html" class="nav-link">Mens</a>
+            <a href="/src/pages/men.html" class="nav-link">Mens</a>
           </li>
 
           <li class="nav-item">
-            <a href="./woman.html" class="nav-link">Womans</a>
+            <a href="/src/pages/woman.html" class="nav-link">Womans</a>
           </li>
 
           <li class="nav-item">
-            <a href="./child.html" class="nav-link">Childs</a>
+            <a href="/src/pages/child.html" class="nav-link">Childs</a>
           </li>
         </ul>
 
@@ -46,15 +46,15 @@ export function loadNavBar(active) {
 
           <ul class="footer-list">
             <li class="footer-item">
-              <a href="./men.html" class="footer-link">Mens</a>
+              <a href="/src/pages/men.html" class="footer-link">Mens</a>
             </li>
 
             <li class="footer-item">
-              <a href="./woman.html" class="footer-link">Womans</a>
+              <a href="/src/pages/woman.html" class="footer-link">Womans</a>
             </li>
 
             <li class="footer-item">
-              <a href="./child.html" class="footer-link">Childs</a>
+              <a href="/src/pages/child.html" class="footer-link">Childs</a>
             </li>
           </ul>
         </div>
@@ -63,25 +63,25 @@ export function loadNavBar(active) {
           <span class="footer-title">LEGAL & PRIVACY</span>
           <ul class="footer-menu">
             <li class="footer-item">
-              <a href="./cookies.html" target="__blank" class="footer-link">
+              <a href="/src/pages/cookies.html" target="__blank" class="footer-link">
                 Cookie Policy
               </a>
             </li>
             <li class="footer-item">
-              <a href="./privacy.html" target="__blank" class="footer-link">
+              <a href="/src/pages/privacy.html" target="__blank" class="footer-link">
                 Privacy Policies
               </a>
             </li>
             <li class="footer-item">
               <a
-              href="./website_terms.html"
+              href="/src/pages/website_terms.html"
               target="__blank"
               class="footer-link">
                 Website terms of use
               </a>
             </li>
             <li class="footer-item">
-              <a href="./terms.html" target="__blank" class="footer-link">
+              <a href="/src/pages/terms.html" target="__blank" class="footer-link">
                 Terms and conditions of sale
               </a>
             </li>
