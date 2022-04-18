@@ -1,5 +1,8 @@
+import { listMens } from "./men";
+import { listWomans } from "./woman";
+import { listChilds } from "./child";
+
 const typing = document.getElementById("typing"),
-  cursor = document.querySelector(".cursor"),
   txt =
     "Etre chic, c'est choisir EShop. N'hesitez plus et faites vos commandes.";
 
