@@ -1,23 +1,30 @@
 /*==================== INITIALIZEAPP ====================*/
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
 /*==================== INITIALIZEAPP ====================*/
 
 /*==================== ANALYTICS ====================*/
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
 /*==================== ANALYTICS ====================*/
 
 /*==================== AUTHENTICATION ====================*/
 import {
   getAuth,
-  onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
   signOut,
-} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js";
 /*==================== AUTHENTICATION ====================*/
 
 /*==================== FIRESTORE ====================*/
-import {} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js";
 /*==================== FIRESTORE ====================*/
 
 /*==================== FIREBASECONFIG ====================*/
@@ -34,8 +41,111 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider(app);
+const githubProvider = new GithubAuthProvider(app);
+const store = getFirestore(app);
 /*==================== FIREBASECONFIG ====================*/
 
-/*==================== VERIFYSTATUS ====================*/
-export function verifyStatus() {}
-/*==================== VERIFYSTATUS ====================*/
+/*==================== CREATE USER ====================*/
+export function createUser({ alert, popup, email, password }) {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      window.location.href = "/src/pages/home.html";
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+
+      popup.textContent = `[+]ERROR: [${errorMessage}][+]`;
+      alert.classList.add("show-pop");
+
+      setTimeout(() => {
+        alert.classList.remove("show-pop");
+      }, 2500);
+    });
+}
+/*==================== CREATE USER ====================*/
+
+/*==================== SIGNIN USER ====================*/
+export function signinUser({ alert, popup, email, password }) {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      window.location.href = "/src/pages/home.html";
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      popup.textContent = `[+]ERROR: [${errorMessage}][+]`;
+      alert.classList.add("show-pop");
+
+      setTimeout(() => {
+        alert.classList.remove("show-pop");
+      }, 2500);
+    });
+}
+/*==================== SIGNIN USER ====================*/
+
+/*==================== SIGNIN GOOGLE ====================*/
+export function signGoogle({ alert, popup }) {
+  signInWithPopup(auth, googleProvider)
+    .then((result) => {
+      window.location.href = "/src/pages/home.html";
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      const errorEmail = error.email;
+
+      popup.textContent = `[+]ERROR: ${errorMessage} [ ] ERROR EMAIL: ${errorEmail}[+]`;
+      alert.classList.add("show-pop");
+
+      setTimeout(() => {
+        alert.classList.remove("show-pop");
+      }, 2500);
+    });
+}
+/*==================== SIGNIN GOOGLE ====================*/
+
+/*==================== SIGNIN GITHUB ====================*/
+export function signGithub({ alert, popup }) {
+  signInWithPopup(auth, githubProvider)
+    .then((result) => {
+      window.location.href = "/src/pages/home.html";
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      const errorEmail = error.email;
+
+      popup.textContent = `[+]ERROR: ${errorMessage} [ ] [+]ERROR EMAIL: ${errorEmail}[+]`;
+      alert.classList.add("show-pop");
+
+      setTimeout(() => {
+        alert.classList.remove("show-pop");
+      }, 2500);
+    });
+}
+/*==================== SIGNIN GITHUB ====================*/
+
+/*==================== AUTHENT STATUS ====================*/
+export function verifyStatus() {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+    } else {
+    }
+  });
+}
+/*==================== AUTHENT STATUS ====================*/
+
+/*==================== SIGNOUT USER ====================*/
+export function signout() {
+  signOut(auth)
+    .then(() => {
+      window.location.href = "/src/pages/authentication.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      return alert(
+        `[+]ERROR CODE[${errorCode}] : ERROR MESSAGE[${errorMessage}][+]`
+      );
+    });
+}
+/*==================== SIGNOUT USER ====================*/

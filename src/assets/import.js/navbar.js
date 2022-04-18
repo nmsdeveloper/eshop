@@ -1,9 +1,11 @@
 export function loadNavBar(active) {
+  const headerCont = document.getElementById("header-container"),
+    footerCont = document.getElementById("footer-container");
+
   const navBar = document.createElement("header"),
-    footer = document.createElement("footer"),
-    headerCont = document.getElementById("header-container"),
-    footerCont = document.getElementById("footer-container"),
-    templateHead = `
+    footer = document.createElement("footer");
+
+  const templateHead = `
       <nav class="nav-bar">
         <a href="./home.html" class="nav-logo">EShop<span>.</span></a>
 
@@ -22,6 +24,10 @@ export function loadNavBar(active) {
 
           <li class="nav-item">
             <a href="/src/pages/child.html" class="nav-link">Childs</a>
+          </li>
+
+          <li class="nav-item">
+            <span id="signout">Sign out</span>
           </li>
         </ul>
 
@@ -130,39 +136,36 @@ export function loadNavBar(active) {
       `;
 
   navBar.classList = "header";
-  navBar.id = "header";
-
   footer.classList = "footer";
-
+  navBar.id = "header";
   navBar.innerHTML += templateHead;
   footer.innerHTML += templateFoot;
 
   headerCont.appendChild(navBar);
   footerCont.appendChild(footer);
 
-  const navLink = document.querySelectorAll(".nav-link");
+  const navLink = document.querySelectorAll(".nav-link"),
+    header = document.getElementById("header"),
+    navToggle = document.getElementById("nav-toggle"),
+    navClose = document.getElementById("nav-close"),
+    navList = document.getElementById("nav-list"),
+    navAuthen = document.getElementById("nav-authen");
+
   navLink[active].classList.add("is-active");
 
-  const header = document.getElementById("header");
   window.onscroll = () => {
     if (window.scrollY >= 300) header.classList.add("is-scroll");
     else header.classList.remove("is-scroll");
   };
 
-  const navToggle = document.getElementById("nav-toggle"),
-    navClose = document.getElementById("nav-close"),
-    navList = document.getElementById("nav-list");
-
   navToggle.onclick = () => {
     if (navToggle) {
-
       navToggle.classList = "nav-toggle hidden-toggle";
       navClose.classList = "nav-close show-toggle";
 
       navList.style.right = "0";
     }
   };
-
   navClose.onclick = () => {
     if (navClose) {
       navToggle.classList = "nav-toggle show-toggle";
@@ -170,5 +173,9 @@ export function loadNavBar(active) {
 
       navList.style.right = "-100%";
     }
+  };
+
+  navAuthen.onclick = () => {
+    window.location.href = "/src/pages/authentication.html";
   };
 }

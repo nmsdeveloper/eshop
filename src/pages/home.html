@@ -160,6 +160,13 @@
     <!--==================== SCRIPTS ====================-->
     <script src="../assets/import.js/navbar.js"></script>
     <script src="../assets/js/home.js"></script>
+
+    <script type="module">
+      import { signout } from "../firebase.config.js";
+      document.getElementById("signout").onclick = () => {
+        signout();
+      };
+    </script>
     <!--==================== SCRIPTS ====================-->
   </body>
 </html>

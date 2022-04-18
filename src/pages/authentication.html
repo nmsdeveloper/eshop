@@ -9,6 +9,16 @@
     <title>EShop - Sign In</title>
   </head>
   <body>
+    <!--==================== POPUP ====================-->
+    <div id="alert" class="alert">
+      <i class="uil uil-exclamation-octagon error-icon"></i>
+      <span id="popup-mess" class="popup-mess"></span>
+      <span class="popup-close">
+        <i class="uil uil-times"></i>
+      </span>
+    </div>
+    <!--==================== POPUP ====================-->
+
     <!--==================== HEADER ====================-->
     <header class="header">
       <h1 class="authen-logo">EShop<span>.</span></h1>
@@ -19,31 +29,33 @@
     <main class="main">
       <div class="authen-left">
         <!--==================== SIGNIN@FORM ====================-->
-        <form class="form show-form" id="signin">
+        <div class="form show-form">
           <div class="signin-form">
-            <h2 class="signin-title">Sign in</h2>
+            <form id="signin">
+              <h2 class="signin-title">Sign in</h2>
 
-            <div>
-              <input
-                class="signin-input"
-                name="email"
-                placeholder="Email"
-                type="mail"
-                required
-              />
-              <input
-                class="signin-input"
-                name="password"
-                placeholder="Password"
-                type="password"
-                required
-              />
-              <input
-                class="signin-input button-in"
-                type="submit"
-                value="Sign in"
-              />
-            </div>
+              <div>
+                <input
+                  class="signin-input"
+                  name="email"
+                  placeholder="Email"
+                  type="mail"
+                  required
+                />
+                <input
+                  class="signin-input"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  required
+                />
+                <input
+                  class="signin-input button-in"
+                  type="submit"
+                  value="Sign in"
+                />
+              </div>
+            </form>
           </div>
           <div class="signin-line">
             <div class="l1"></div>
@@ -51,13 +63,13 @@
             <div class="l2"></div>
           </div>
           <div class="signin-social">
-            <div class="social-in">
+            <div id="google-in" class="social-in">
               <i class="uil uil-google"></i>
             </div>
-            <div class="social-in">
+            <div id="github-in" class="social-in">
               <i class="uil uil-github"></i>
             </div>
-            <div class="social-in">
+            <div id="facebook-in" class="social-in">
               <i class="uil uil-facebook-f"></i>
             </div>
           </div>
@@ -65,42 +77,44 @@
           <div class="signin-mess">
             You have an account? <span id="go-signup">Sign up</span>
           </div>
-        </form>
+        </div>
         <!--==================== SIGNIN@FORM ====================-->
 
         <!--==================== SIGNUP@FORM ====================-->
-        <form class="form hidden-form" id="signup">
+        <div class="form hidden-form">
           <div class="signup-form">
-            <h2 class="signup-title">Sign up</h2>
+            <form id="signup">
+              <h2 class="signup-title">Sign up</h2>
 
-            <div>
-              <input
-                class="signup-input"
-                name="username"
-                placeholder="Username"
-                type="text"
-                required
-              />
-              <input
-                class="signup-input"
-                name="email"
-                placeholder="example@gmail.com"
-                type="email"
-                required
-              />
-              <input
-                class="signup-input"
-                name="password"
-                placeholder="Password"
-                type="password"
-                required
-              />
-              <input
-                class="signup-input button-up"
-                type="submit"
-                value="Sign up"
-              />
-            </div>
+              <div>
+                <input
+                  class="signup-input"
+                  name="username"
+                  placeholder="Username"
+                  type="text"
+                  required
+                />
+                <input
+                  class="signup-input"
+                  name="email"
+                  placeholder="example@gmail.com"
+                  type="email"
+                  required
+                />
+                <input
+                  class="signup-input"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  required
+                />
+                <input
+                  class="signup-input button-up"
+                  type="submit"
+                  value="Sign up"
+                />
+              </div>
+            </form>
           </div>
           <div class="signup-line">
             <div class="l1"></div>
@@ -108,13 +122,13 @@
             <div class="l2"></div>
           </div>
           <div class="signup-social">
-            <div class="social-up">
+            <div id="google-up" class="social-up">
               <i class="uil uil-google"></i>
             </div>
-            <div class="social-up">
+            <div id="github-up" class="social-up">
               <i class="uil uil-github"></i>
             </div>
-            <div class="social-up">
+            <div id="facebook-up" class="social-up">
               <i class="uil uil-facebook-f"></i>
             </div>
           </div>
@@ -122,7 +136,7 @@
           <div class="signup-mess">
             Already have an account? <span id="go-signin">Sign in</span>
           </div>
-        </form>
+        </div>
         <!--==================== SIGNUP@FORM ====================-->
       </div>
 
@@ -132,6 +146,75 @@
 
     <!--==================== SCRIPTS ====================-->
     <script src="../assets/js/authentication.js"></script>
+
+    <script type="module">
+      import {
+        createUser,
+        signinUser,
+        signGoogle,
+        signGithub,
+      } from "../firebase.config.js";
+
+      const alert = document.getElementById("alert"),
+        popup = document.getElementById("popup-mess"),
+        signinForm = document.getElementById("signin"),
+        signupForm = document.getElementById("signup"),
+        googleIn = document.getElementById("google-in"),
+        googleUp = document.getElementById("google-up"),
+        githubIn = document.getElementById("github-in"),
+        githubUp = document.getElementById("github-up"),
+        facebookIn = document.getElementById("facebook-in"),
+        facebookUp = document.getElementById("facebook-up");
+
+      signinForm.onsubmit = (e) => {
+        e.preventDefault();
+
+        const inputIn = signinForm.elements["email"].value,
+          inputPass = signinForm.elements["password"].value;
+
+        signinUser({
+          alert: alert,
+          popup: popup,
+          email: inputIn,
+          password: inputPass,
+        });
+      };
+      signupForm.onsubmit = (e) => {
+        e.preventDefault();
+
+        const inputUp = signupForm.elements["email"].value,
+          inputPass = signupForm.elements["password"].value;
+
+        createUser({
+          alert: alert,
+          popup: popup,
+          email: inputUp,
+          password: inputPass,
+        });
+      };
+
+      googleIn.onclick = () =>
+        signGoogle({
+          alert: alert,
+          popup: popup,
+        });
+      googleUp.onclick = () =>
+        signGoogle({
+          alert: alert,
+          popup: popup,
+        });
+
+      githubIn.onclick = () =>
+        signGithub({
+          alert: alert,
+          popup: popup,
+        });
+      githubUp.onclick = () =>
+        signGithub({
+          alert: alert,
+          popup: popup,
+        });
+    </script>
     <!--==================== SCRIPTS ====================-->
   </body>
 </html>
