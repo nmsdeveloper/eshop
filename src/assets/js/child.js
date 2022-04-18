@@ -1,7 +1,7 @@
 import { listProducts } from "/src/assets/import.js/product.js";
 
 const productsContent = document.getElementById("products-content");
-export const listChilds = [
+const listChilds = [
   {
     type: "boy",
     image: "/src/assets/images/enfants/boys/boy (6).png",
@@ -175,3 +175,5 @@ function filterActive() {
   filterLink.forEach((l) => l.classList.remove("filter-active"));
   this.classList.add("filter-active");
 }
+
+export default listChilds;
