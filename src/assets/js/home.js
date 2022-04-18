@@ -1,7 +1,3 @@
-// import listMens from "./men.js";
-// import listWomans from "./woman.js";
-// import listChilds from "./child.js";
-
 const typing = document.getElementById("typing"),
   txt =
     "Etre chic, c'est choisir EShop. N'hesitez plus et faites vos commandes.";
