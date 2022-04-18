@@ -27,7 +27,3 @@ btnSignUp.onclick = () => {
     document.title = "EShop - Sign In";
   }
 };
-
-btnIn.onclick = () => {
-  window.location.href = "../pages/home.html";
-};

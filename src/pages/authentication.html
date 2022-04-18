@@ -29,33 +29,31 @@
     <main class="main">
       <div class="authen-left">
         <!--==================== SIGNIN@FORM ====================-->
-        <div class="form show-form">
+        <form class="form show-form" id="signin">
           <div class="signin-form">
-            <form id="signin">
-              <h2 class="signin-title">Sign in</h2>
+            <h2 class="signin-title">Sign in</h2>
 
-              <div>
-                <input
-                  class="signin-input"
-                  name="email"
-                  placeholder="Email"
-                  type="mail"
-                  required
-                />
-                <input
-                  class="signin-input"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  required
-                />
-                <input
-                  class="signin-input button-in"
-                  type="submit"
-                  value="Sign in"
-                />
-              </div>
-            </form>
+            <div>
+              <input
+                class="signin-input"
+                name="email"
+                placeholder="Email"
+                type="mail"
+                required
+              />
+              <input
+                class="signin-input"
+                name="password"
+                placeholder="Password"
+                type="password"
+                required
+              />
+              <input
+                class="signin-input button-in"
+                type="submit"
+                value="Sign in"
+              />
+            </div>
           </div>
           <div class="signin-line">
             <div class="l1"></div>
@@ -77,44 +75,42 @@
           <div class="signin-mess">
             You have an account? <span id="go-signup">Sign up</span>
           </div>
-        </div>
+        </form>
         <!--==================== SIGNIN@FORM ====================-->
 
         <!--==================== SIGNUP@FORM ====================-->
-        <div class="form hidden-form">
+        <form class="form hidden-form" id="signup">
           <div class="signup-form">
-            <form id="signup">
-              <h2 class="signup-title">Sign up</h2>
+            <h2 class="signup-title">Sign up</h2>
 
-              <div>
-                <input
-                  class="signup-input"
-                  name="username"
-                  placeholder="Username"
-                  type="text"
-                  required
-                />
-                <input
-                  class="signup-input"
-                  name="email"
-                  placeholder="example@gmail.com"
-                  type="email"
-                  required
-                />
-                <input
-                  class="signup-input"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  required
-                />
-                <input
-                  class="signup-input button-up"
-                  type="submit"
-                  value="Sign up"
-                />
-              </div>
-            </form>
+            <div>
+              <input
+                class="signup-input"
+                name="username"
+                placeholder="Username"
+                type="text"
+                required
+              />
+              <input
+                class="signup-input"
+                name="email"
+                placeholder="example@gmail.com"
+                type="email"
+                required
+              />
+              <input
+                class="signup-input"
+                name="password"
+                placeholder="Password"
+                type="password"
+                required
+              />
+              <input
+                class="signup-input button-up"
+                type="submit"
+                value="Sign up"
+              />
+            </div>
           </div>
           <div class="signup-line">
             <div class="l1"></div>
@@ -136,7 +132,7 @@
           <div class="signup-mess">
             Already have an account? <span id="go-signin">Sign in</span>
           </div>
-        </div>
+        </form>
         <!--==================== SIGNUP@FORM ====================-->
       </div>
 
@@ -193,27 +189,31 @@
         });
       };
 
-      googleIn.onclick = () =>
+      googleIn.onclick = () => {
         signGoogle({
           alert: alert,
           popup: popup,
         });
-      googleUp.onclick = () =>
+      };
+      googleUp.onclick = () => {
         signGoogle({
           alert: alert,
           popup: popup,
         });
+      };
 
-      githubIn.onclick = () =>
+      githubIn.onclick = () => {
         signGithub({
           alert: alert,
           popup: popup,
         });
-      githubUp.onclick = () =>
+      };
+      githubUp.onclick = () => {
         signGithub({
           alert: alert,
           popup: popup,
         });
+      };
     </script>
     <!--==================== SCRIPTS ====================-->
   </body>

@@ -6,6 +6,15 @@ export function loadNavBar(active) {
     footer = document.createElement("footer");
 
   const templateHead = `
+      <!--==================== POPUP ====================-->
+      <div id="alert" class="alert">
+        <i class="uil uil-exclamation-octagon error-icon"></i>
+        <span id="popup-mess" class="popup-mess"></span>
+        <span class="popup-close">
+          <i class="uil uil-times"></i>
+        </span>
+      </div>
+      <!--==================== POPUP ====================-->
       <nav class="nav-bar">
         <a href="./home.html" class="nav-logo">EShop<span>.</span></a>
 

@@ -12,7 +12,16 @@
 
     <script type="module">
       import { loadNavBar } from "../assets/import.js/navbar.js";
+      import { signout } from "../firebase.config.js";
+
       loadNavBar(0);
+
+      const alert = document.getElementById("alert"),
+        popup = document.getElementById("popup-mess");
+
+      document.getElementById("signout").onclick = () => {
+        signout({ alert: alert, popup: popup });
+      };
     </script>
   </head>
   <body>
@@ -160,13 +169,6 @@
     <!--==================== SCRIPTS ====================-->
     <script src="../assets/import.js/navbar.js"></script>
     <script src="../assets/js/home.js"></script>
-
-    <script type="module">
-      import { signout } from "../firebase.config.js";
-      document.getElementById("signout").onclick = () => {
-        signout();
-      };
-    </script>
     <!--==================== SCRIPTS ====================-->
   </body>
 </html>

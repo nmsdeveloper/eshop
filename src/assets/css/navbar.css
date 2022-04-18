@@ -1,3 +1,65 @@
+body {
+  overflow: hidden;
+}
+
+/*==================== POPUP ====================*/
+@keyframes showPop {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.alert {
+  display: none;
+  position: absolute;
+  min-width: 350px;
+  padding: 15px 35px;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 0.25rem;
+  border-left: 0.25rem solid var(--error-color);
+  background-color: var(--error-bg-color);
+  color: var(--error-color);
+  font-size: var(--tiny-size);
+  font-weight: var(--font-normal);
+  z-index: var(--z-fixed);
+}
+.popup-mess {
+  padding: 0 1rem;
+}
+.error-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--normal-size);
+  color: var(--error-color);
+}
+.popup-close {
+  position: absolute;
+  cursor: pointer;
+  font-size: var(--small-size);
+  padding: 10px 5px;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--error-bg-color);
+  background-color: var(--error-color);
+}
+.show-pop {
+  display: block;
+  animation: 0.5s showPop linear;
+}
+/*==================== POPUP ====================*/
+
 /*==================== NAVBAR ====================*/
 .nav-toggle,
 .nav-close {

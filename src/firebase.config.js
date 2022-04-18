@@ -55,7 +55,7 @@ export function createUser({ alert, popup, email, password }) {
     .catch((error) => {
       const errorMessage = error.message;
 
-      popup.textContent = `[+]ERROR: [${errorMessage}][+]`;
+      popup.textContent = `[+]${errorMessage}[+]`;
       alert.classList.add("show-pop");
 
       setTimeout(() => {
@@ -73,7 +73,7 @@ export function signinUser({ alert, popup, email, password }) {
     })
     .catch((error) => {
       const errorMessage = error.message;
-      popup.textContent = `[+]ERROR: [${errorMessage}][+]`;
+      popup.textContent = `[+]${errorMessage}[+]`;
       alert.classList.add("show-pop");
 
       setTimeout(() => {
@@ -93,7 +93,7 @@ export function signGoogle({ alert, popup }) {
       const errorMessage = error.message;
       const errorEmail = error.email;
 
-      popup.textContent = `[+]ERROR: ${errorMessage} [ ] ERROR EMAIL: ${errorEmail}[+]`;
+      popup.textContent = `[+]${errorMessage}[+] - [+]${errorEmail}[+]`;
       alert.classList.add("show-pop");
 
       setTimeout(() => {
@@ -113,7 +113,7 @@ export function signGithub({ alert, popup }) {
       const errorMessage = error.message;
       const errorEmail = error.email;
 
-      popup.textContent = `[+]ERROR: ${errorMessage} [ ] [+]ERROR EMAIL: ${errorEmail}[+]`;
+      popup.textContent = `[+]${errorMessage}[+] [+]${errorEmail}[+]`;
       alert.classList.add("show-pop");
 
       setTimeout(() => {
@@ -135,17 +135,19 @@ export function verifyStatus() {
 /*==================== AUTHENT STATUS ====================*/
 
 /*==================== SIGNOUT USER ====================*/
-export function signout() {
+export function signout({ alert, popup }) {
   signOut(auth)
     .then(() => {
       window.location.href = "/src/pages/authentication.html";
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
-      return alert(
-        `[+]ERROR CODE[${errorCode}] : ERROR MESSAGE[${errorMessage}][+]`
-      );
+      popup.textContent = `[+]${errorMessage}[+]`;
+      alert.classList.add("show-pop");
+
+      setTimeout(() => {
+        alert.classList.remove("show-pop");
+      }, 2500);
     });
 }
 /*==================== SIGNOUT USER ====================*/
