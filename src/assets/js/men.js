@@ -1,4 +1,4 @@
-import { listProducts } from "/src/assets/import.js/product";
+import { listProducts } from "/src/assets/import.js/product.js";
 
 const articlesContent = document.getElementById("products-content");
 export const listMens = [

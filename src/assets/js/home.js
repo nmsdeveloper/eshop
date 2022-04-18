@@ -1,6 +1,6 @@
-import { listMens } from "./men";
-import { listWomans } from "./woman";
-import { listChilds } from "./child";
+import { listMens } from "./men.js";
+import { listWomans } from "./woman.js";
+import { listChilds } from "./child.js";
 
 const typing = document.getElementById("typing"),
   txt =
