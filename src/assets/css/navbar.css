@@ -267,6 +267,13 @@ footer {
     padding: 0.5rem 1.5rem;
   }
 
+  .section-subtitle {
+    background: linear-gradient(var(--secondary-color), var(--subtitle-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   /*==================== FOOTER ====================*/
   .footer-container {
     padding: 1rem 2.5rem;

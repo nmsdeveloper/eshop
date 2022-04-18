@@ -46,6 +46,9 @@ export function loadNavBar(active) {
 
           <ul class="footer-list">
             <li class="footer-item">
+              <a href="/src/pages/home.html" class="footer-link">Home</a>
+            </li>
+            <li class="footer-item">
               <a href="/src/pages/men.html" class="footer-link">Mens</a>
             </li>
 

@@ -111,6 +111,38 @@
     -ms-grid-columns: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem 2rem;
-  }  
+  }
 }
 /*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
+@media screen and (max-width: 467px) {
+  .products {
+    padding: 0.5rem 2rem;
+  }
+  .products-container {
+    row-gap: 5rem;
+  }
+  .products-subtitle {
+    font-size: calc(var(--medium-size) + 0.5rem);
+  }
+  .products-content {
+    row-gap: 5rem;
+  }
+
+  .products-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .products-img {
+    position: absolute;
+    transform: translateY(-60%);
+  }
+  .products-cards:hover .products-img {
+    transform: scale(1.2) translateY(-70%);
+  }
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/

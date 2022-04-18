@@ -28,3 +28,35 @@ video {
   font-weight: var(--font-bold);
 }
 /*==================== HEAD ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+@media screen and (max-width: 767px) {
+  .head-title {
+    top: 45%;
+    right: 10%;
+    font-size: calc(var(--big-size) - 0.75rem);
+  }
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
+@media screen and (max-width: 467px) {
+  .head {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: var(--white-color);
+  }
+  video {
+    height: 40vh;
+  }
+
+  .head-title {
+    top: 37%;
+    right: 8%;
+    font-size: calc(var(--medium-size) + 0.5rem);
+  }
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
