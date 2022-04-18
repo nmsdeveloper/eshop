@@ -7,11 +7,14 @@
   padding: 1rem 2rem;
   z-index: var(--z-fixed);
 }
-.signin-logo {
-  color: var(--primary-color);
+.authen-logo {
   font-size: var(--logo-size);
   font-weight: var(--font-bold);
   text-shadow: var(--text-shadow);
+  color: var(--white-color);
+}
+.authen-logo span {
+  color: var(--primary-color);
 }
 
 .authen-left,
@@ -220,3 +223,57 @@
   animation: 1s bgAnim linear;
 }
 /*==================== AUTHENTICATION ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+@media screen and (max-width: 767px) {
+  .main {
+    display: block;
+  }
+  .authen-left {
+    position: absolute;
+    background-color: transparent;
+  }
+  .form {
+    transform: translateY(20px);
+    padding: 1rem 3rem;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .signin-input,
+  .signup-input {
+    color: var(--primary-color);
+    background-color: var(--white-color);
+  }
+  .button-in,
+  .button-up,
+  .signin-line,
+  .signup-line,
+  .signin-mess,
+  .signup-mess {
+    color: var(--white-color);
+  }
+
+  .button-in,
+  .button-up {
+    background-color: var(--primary-color);
+  }
+  .signin-input::placeholder,
+  .signup-input::placeholder {
+    color: var(--secondary-color);
+  }
+  .social-in,
+  .social-up {
+    box-shadow: none;
+  }
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
+
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
+@media screen and (max-width: 467px) {
+  .form {
+    transform: translateY(0);
+    /* padding: 1rem 3rem; */
+  }
+}
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
