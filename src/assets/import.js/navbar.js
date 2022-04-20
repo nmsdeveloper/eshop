@@ -36,7 +36,7 @@ export function loadNavBar(active) {
           </li>
 
           <li class="nav-item">
-            <span id="signout">Sign out</span>
+            <span style="cursor:pointer;" id="signout" class="nav-link">Sign out</span>
           </li>
         </ul>
 
