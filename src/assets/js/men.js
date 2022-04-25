@@ -204,25 +204,43 @@ const productsContent = document.getElementById("products-content"),
 
 productsContent.innerHTML = listProducts(lists);
 
-var mixerMens = mixitup(".products-content", {
-  selectors: {
-    target: ".products-cards",
-  },
-  animation: {
-    duration: 500,
-  },
-});
-
-const filterLink = document.querySelectorAll(".filter-btn"),
-  headCollection = document.getElementById("head-collection"),
-  headTop = document.getElementById("head-top");
-
-headCollection.onclick = () => filterActive(filterLink[0]);
-headTop.onclick = () => filterActive(filterLink[1]);
-
-filterLink.forEach((n) => n.addEventListener("click", () => filterActive(n)));
-
-function filterActive(n) {
-  filterLink.forEach((l) => l.classList.remove("filter-active"));
-  n.classList.add("filter-active");
-}
+const filterSearch = document.getElementById("filter-search"),
+  filterBtns = document.querySelectorAll(".filter-btn"),
+  productsCard = document.querySelectorAll(".products-cards");
+  
+filterSearch.onkeyup = (e) => {
+  e.preventDefault();
+  const searchValue = filterSearch.value.toLowerCase().trim();
+  productsCard.forEach((pc) => {
+    if (
+      pc.classList.contains(searchValue) ||
+      pc.classList.value.includes(searchValue)
+    ) {
+      pc.style.display = "flex";
+    } else if (searchValue == "") {
+      pc.style.display = "flex";
+    } else {
+      pc.style.display = "none";
+    }
+  });
+};
+filterBtns.forEach(
+  (n) =>
+    (n.onclick = (e) => {
+      e.preventDefault();
+      const filter = e.target.dataset.filter;
+      productsCard.forEach((pc) => {
+        if (filter == "all") {
+          pc.style.display = "flex";
+        } else {
+          if (pc.classList.contains(filter)) {
+            pc.style.display = "flex";
+          } else {
+            pc.style.display = "none";
+          }
+        }
+        filterBtns.forEach((c) => c.classList.remove("active"));
+        n.classList.add("active");
+      });
+    })
+);

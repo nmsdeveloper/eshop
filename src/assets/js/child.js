@@ -159,19 +159,43 @@ const productsContent = document.getElementById("products-content"),
 
 productsContent.innerHTML = listProducts(lists);
 
-var mixerChilds = mixitup(".products-content", {
-  selectors: {
-    target: ".products-cards",
-  },
-  animation: {
-    duration: 500,
-  },
-});
+const filterSearch = document.getElementById("filter-search"),
+  filterBtns = document.querySelectorAll(".filter-btn"),
+  productsCard = document.querySelectorAll(".products-cards");
 
-const filterLink = document.querySelectorAll(".filter-btn");
-
-filterLink.forEach((n) => n.addEventListener("click", filterActive));
-function filterActive() {
-  filterLink.forEach((l) => l.classList.remove("filter-active"));
-  this.classList.add("filter-active");
-}
+filterSearch.onkeyup = (e) => {
+  e.preventDefault();
+  const searchValue = filterSearch.value.toLowerCase().trim();
+  productsCard.forEach((pc) => {
+    if (
+      pc.classList.contains(searchValue) ||
+      pc.classList.value.includes(searchValue)
+    ) {
+      pc.style.display = "flex";
+    } else if (searchValue == "") {
+      pc.style.display = "flex";
+    } else {
+      pc.style.display = "none";
+    }
+  });
+};
+filterBtns.forEach(
+  (n) =>
+    (n.onclick = (e) => {
+      e.preventDefault();
+      const filter = e.target.dataset.filter;
+      productsCard.forEach((pc) => {
+        if (filter == "all") {
+          pc.style.display = "flex";
+        } else {
+          if (pc.classList.contains(filter)) {
+            pc.style.display = "flex";
+          } else {
+            pc.style.display = "none";
+          }
+        }
+        filterBtns.forEach((c) => c.classList.remove("active"));
+        n.classList.add("active");
+      });
+    })
+);

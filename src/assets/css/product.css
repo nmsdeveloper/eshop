@@ -1,4 +1,4 @@
-/*==================== PRODUCTS ====================*/
+/* ==================== PRODUCTS ====================*/
 .products {
   display: flex;
   flex-direction: column;
@@ -9,8 +9,9 @@
 }
 .products-container {
   display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
+  justify-content: space-between;
+  flex-direction: row;
+  column-gap: 5rem;
   width: 100%;
   height: auto;
   padding-top: 3rem;
@@ -24,84 +25,87 @@
 }
 
 .products-filter {
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  column-gap: 4rem;
+  flex-direction: column;
+  row-gap: 0.25rem;
+  align-items: flex-start;
+  width: 20%;
 }
-.filter-btn {
-  cursor: pointer;
-  color: var(--dark-color);
+
+.products-search {
+  padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  transition: 0.3s ease-in-out;
+  background-color: var(--subtitle-color);
+  margin-bottom: 1rem;
 }
-.filter-btn:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+.filter-search {
+  color: var(--dark-color);
 }
-.filter-active {
-  background-color: rgba(0, 0, 0, 0.2);
+
+.filter-btn {
+  font-size: var(--small-size);
+  font-weight: var(--font-normal);
+  padding: 0.25rem 0.75rem;
+}
+.filter-btn.active {
+  color: var(--title-color);
+  background-color: var(--text-color);
+  border-radius: 0.5rem;
 }
 
 .products-cards {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border-radius: 0.5rem;
-  background-color: var(--text-color);
-  box-shadow: 0 0 10px var(--subtitle-color);
-  padding: 0.5rem 0.75rem;
+  row-gap: 1rem;
+  text-align: center;
+  padding: 0.75rem 1rem;
   transition: 0.3s ease-in-out;
 }
 .products-cards:hover {
-  box-shadow: 0 0 10px var(--text-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px var(--subtitle-color);
 }
 
 .products-img {
-  width: 100px;
-  height: 100px;
-  filter: drop-shadow(-1px 1px 1px var(--white-color));
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(5px 5px 0 var(--text-color));
   transition: 0.3s ease-in-out;
 }
-.products-cards:hover .products-img {
-  transform: scale(1.2) translateY(-2rem);
-}
 
-.products-data {
-  margin-top: 2rem;
-}
 .products-name {
-  font-size: var(--small-size);
-  font-weight: var(--font-bold);
+  font-size: var(--smaller-size);
+  font-weight: var(--font-semi-bold);
   color: var(--title-color);
 }
 .products-price {
-  font-size: var(--smallest-size);
+  font-size: var(--tiny-size);
   font-weight: var(--font-normal);
   color: var(--subtitle-color);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
-.products-icon {
+.products-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
+  font-size: var(--tiny-size);
+  font-weight: var(--font-small);
+  border: 1px solid var(--text-color);
+  padding: 0 0.25rem;
   cursor: pointer;
-  width: 25px;
-  height: 25px;
-  border-radius: 0.25rem;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: var(--small-size);
+  margin-top: 1rem;
   transition: 0.3s ease-in-out;
 }
-.products-icon:hover {
-  color: var(--primary-color);
+.products-icon {
+  margin-left: 1rem;
+  font-size: var(--small-size);
+  color: var(--secondary-color);
+  transition: 0.3s ease-in-out;
+}
+.products-btn:hover {
+  color: var(--white-color);
+  background-color: var(--text-color);
 }
 /*==================== PRODUCTS ====================*/
 
@@ -121,28 +125,12 @@
     padding: 0.5rem 2rem;
   }
   .products-container {
-    row-gap: 5rem;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
   }
   .products-subtitle {
     font-size: calc(var(--medium-size) + 0.5rem);
   }
-  .products-content {
-    row-gap: 5rem;
-  }
-
-  .products-cards {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .products-img {
-    position: absolute;
-    transform: translateY(-60%);
-  }
-  .products-cards:hover .products-img {
-    transform: scale(1.2) translateY(-70%);
-  }
 }
-/*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
+/*==================== @MEDIAQUERY - @MAXWIDTH:467 ==================== */

@@ -33,22 +33,12 @@
         <div class="head-content">
           <ul class="head-list">
             <li class="head-item">
-              <a
-                href="#products"
-                id="head-collection"
-                class="head-link"
-                data-filter=".collection"
-              >
+              <a href="#products" id="head-collection" class="head-link">
                 <i class="uil uil-angle-left-b"></i>Collections
               </a>
             </li>
             <li class="head-item">
-              <a
-                href="#products"
-                id="head-top"
-                class="head-link"
-                data-filter=".top"
-              >
+              <a href="#products" id="head-top" class="head-link">
                 <i class="uil uil-angle-left-b"></i>Tops
               </a>
             </li>
@@ -63,16 +53,19 @@
         <span class="section-subtitle products-subtitle">Clothing Mens</span>
         <div class="products-container">
           <div class="products-filter">
-            <span
-              id="filter-collection"
-              class="filter-btn"
-              data-filter=".collection"
-            >
-              Collections
-            </span>
-            <span id="filter-top" class="filter-btn" data-filter=".top">
-              Tops
-            </span>
+            <div class="products-search">
+              <form onsubmit="return false;">
+                <input
+                  id="filter-search"
+                  class="filter-search"
+                  type="text"
+                  placeholder="Search Product"
+                />
+              </form>
+            </div>
+            <div data-filter="all" class="filter-btn active">All</div>
+            <div data-filter="collection" class="filter-btn">Collections</div>
+            <div data-filter="top" class="filter-btn">Tops</div>
           </div>
           <div id="products-content" class="products-content"></div>
         </div>
@@ -86,7 +79,6 @@
     <!--==================== FOOTER ====================-->
 
     <!--==================== SCRIPTS ====================-->
-    <script src="../assets/import.js/mixitup.js"></script>
     <script type="module" src="../assets/js/men.js"></script>
     <!--==================== SCRIPTS ====================-->
   </body>
