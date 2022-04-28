@@ -138,7 +138,7 @@ export function verifyStatus() {
 export function signout({ alert, popup }) {
   signOut(auth)
     .then(() => {
-      window.location.href = "./authentication.html";
+      window.location.reload();
     })
     .catch((error) => {
       const errorMessage = error.message;

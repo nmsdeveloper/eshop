@@ -1,4 +1,4 @@
-export function loadNavBar(active) {
+export function loadNavBar() {
   const headerCont = document.getElementById("header-container"),
     footerCont = document.getElementById("footer-container");
 
@@ -160,7 +160,15 @@ export function loadNavBar(active) {
     navList = document.getElementById("nav-list"),
     navAuthen = document.getElementById("nav-authen");
 
-  navLink[active].classList.add("is-active");
+  if (window.location.href.includes("home")) {
+    navLink[0].classList.add("is-active");
+  } else if (window.location.href.includes("men")) {
+    navLink[1].classList.add("is-active");
+  } else if (window.location.href.includes("woman")) {
+    navLink[2].classList.add("is-active");
+  } else if (window.location.href.includes("child")) {
+    navLink[3].classList.add("is-active");
+  }
 
   window.onscroll = () => {
     if (window.scrollY >= 300) header.classList.add("is-scroll");
