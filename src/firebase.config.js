@@ -50,7 +50,7 @@ const store = getFirestore(app);
 export function createUser({ alert, popup, email, password }) {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      window.location.href = "/src/pages/home.html";
+      window.location.href = "./home.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -69,7 +69,7 @@ export function createUser({ alert, popup, email, password }) {
 export function signinUser({ alert, popup, email, password }) {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      window.location.href = "/src/pages/home.html";
+      window.location.href = "./home.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -87,7 +87,7 @@ export function signinUser({ alert, popup, email, password }) {
 export function signGoogle({ alert, popup }) {
   signInWithPopup(auth, googleProvider)
     .then((result) => {
-      window.location.href = "/src/pages/home.html";
+      window.location.href = "./home.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -107,7 +107,7 @@ export function signGoogle({ alert, popup }) {
 export function signGithub({ alert, popup }) {
   signInWithPopup(auth, githubProvider)
     .then((result) => {
-      window.location.href = "/src/pages/home.html";
+      window.location.href = "./home.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -138,7 +138,7 @@ export function verifyStatus() {
 export function signout({ alert, popup }) {
   signOut(auth)
     .then(() => {
-      window.location.href = "/src/pages/authentication.html";
+      window.location.href = "./authentication.html";
     })
     .catch((error) => {
       const errorMessage = error.message;
