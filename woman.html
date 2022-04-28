@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/css/bases.styles.css" />
-    <link rel="stylesheet" href="../assets/css/navbar.css" />
-    <link rel="stylesheet" href="../assets/css/men.css" />
-    <link rel="stylesheet" href="../assets/css/product.css" />
-    <title>EShop - Mens</title>
+    <link rel="stylesheet" href="./src/assets/css/bases.styles.css" />
+    <link rel="stylesheet" href="./src/assets/css/navbar.css" />
+    <link rel="stylesheet" href="./src/assets/css/woman.css" />
+    <link rel="stylesheet" href="./src/assets/css/product.css" />
+    <title>EShop - Womans</title>
 
     <script type="module">
-      import { loadNavBar } from "../assets/import.js/navbar.js";
-      loadNavBar(1);
+      import { loadNavBar } from "./src/assets/import.js/navbar.js";
+      loadNavBar(2);
     </script>
   </head>
   <body>
@@ -28,29 +28,22 @@
           loop
           autoplay
           muted
-          src="../assets/videos/videos (1).mp4"
+          src="./src/assets/videos/videos (2).mp4"
         ></video>
-        <div class="head-content">
-          <ul class="head-list">
-            <li class="head-item">
-              <a href="#products" id="head-collection" class="head-link">
-                <i class="uil uil-angle-left-b"></i>Collections
-              </a>
-            </li>
-            <li class="head-item">
-              <a href="#products" id="head-top" class="head-link">
-                <i class="uil uil-angle-left-b"></i>Tops
-              </a>
-            </li>
-          </ul>
-        </div>
-        <span class="head-title">ESHOPPING - MENS</span>
+        <video
+          loop
+          autoplay
+          muted
+          src="./src/assets/videos/videos (3).mp4"
+        ></video>
+
+        <span class="head-title">ESHOPPING - WOMANS</span>
       </section>
       <!--==================== HEAD ====================-->
 
       <!--==================== PRODUCTS ====================-->
       <section id="products" class="products section">
-        <span class="section-subtitle products-subtitle">Clothing Mens</span>
+        <span class="section-subtitle products-subtitle">Clothing Womans</span>
         <div class="products-container">
           <div class="products-filter">
             <div class="products-search">
@@ -64,8 +57,8 @@
               </form>
             </div>
             <div data-filter="all" class="filter-btn active">All</div>
-            <div data-filter="collection" class="filter-btn">Collections</div>
-            <div data-filter="top" class="filter-btn">Tops</div>
+            <div data-filter="dress" class="filter-btn">Dress</div>
+            <div data-filter="skirt" class="filter-btn">Skirt</div>
           </div>
           <div id="products-content" class="products-content"></div>
         </div>
@@ -79,7 +72,7 @@
     <!--==================== FOOTER ====================-->
 
     <!--==================== SCRIPTS ====================-->
-    <script type="module" src="../assets/js/men.js"></script>
+    <script type="module" src="./src/assets/js/woman.js"></script>
     <!--==================== SCRIPTS ====================-->
   </body>
 </html>
