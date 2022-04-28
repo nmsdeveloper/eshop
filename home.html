@@ -4,10 +4,87 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/assets/css/swiper.min.css" />
     <link rel="stylesheet" href="./src/assets/css/bases.styles.css" />
     <link rel="stylesheet" href="./src/assets/css/navbar.css" />
     <link rel="stylesheet" href="./src/assets/css/home.css" />
     <title>EShop - Home</title>
+
+    <style>
+      .home-slide {
+        width: 100%;
+        height: 50vh;
+      }
+      .slide-title {
+        display: flex;
+        align-items: center;
+        font-size: var(--small-size);
+        color: var(--primary-color);
+      }
+      .slide-title i {
+        margin-left: 0.5rem;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .products-cards {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        transition: 0.3s ease-in-out;
+      }
+      .products-cards:hover {
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px var(--subtitle-color);
+      }
+
+      .products-img {
+        width: 150px;
+        height: 150px;
+        filter: drop-shadow(5px 5px 0 var(--text-color));
+        transition: 0.3s ease-in-out;
+      }
+
+      .products-name {
+        font-size: var(--smaller-size);
+        font-weight: var(--font-semi-bold);
+        color: var(--title-color);
+      }
+      .products-price {
+        font-size: var(--tiny-size);
+        font-weight: var(--font-normal);
+        color: var(--subtitle-color);
+      }
+      .products-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--tiny-size);
+        font-weight: var(--font-small);
+        border: 1px solid var(--text-color);
+        padding: 0 0.25rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: 0.3s ease-in-out;
+      }
+      .products-icon {
+        margin-left: 1rem;
+        font-size: var(--small-size);
+        color: var(--secondary-color);
+        transition: 0.3s ease-in-out;
+      }
+      .products-btn:hover {
+        color: var(--white-color);
+        background-color: var(--text-color);
+      }
+    </style>
 
     <script type="module">
       import { loadNavBar } from "./src/assets/import.js/navbar.js";
@@ -50,6 +127,16 @@
       <section class="mens section">
         <h1 class="section-subtitle">Some Clothing</h1>
         <h4 class="section-title">Mens</h4>
+
+        <div class="home-slide">
+          <h1 class="slide-title">More<i class="uil uil-arrow-right"></i></h1>
+          <div class="swiper">
+            <div id="wrapper-men" class="swiper-wrapper"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
       </section>
       <!--==================== SOME CLOTHING MENS ====================-->
 
@@ -98,6 +185,16 @@
       <section class="womans section">
         <h1 class="section-subtitle">Some Clothing</h1>
         <h4 class="section-title">Womans</h4>
+
+        <div class="home-slide">
+          <h1 class="slide-title">More<i class="uil uil-arrow-right"></i></h1>
+          <div class="swiper">
+            <div id="wrapper-woman" class="swiper-wrapper"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
       </section>
       <!--==================== SOME CLOTHING WOMANS ====================-->
 
@@ -161,11 +258,24 @@
       <section class="childs section">
         <h1 class="section-subtitle">Some Clothing</h1>
         <h4 class="section-title">Childs</h4>
+
+        <div class="home-slide">
+          <h1 class="slide-title">More<i class="uil uil-arrow-right"></i></h1>
+          <div class="swiper">
+            <div id="wrapper-child" class="swiper-wrapper"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
       </section>
       <!--==================== SOME CLOTHING CHILDS ====================-->
 
       <!--==================== CONTACT ESHOP ====================-->
-      <section class="contact section"></section>
+      <section class="contact section">
+        <h1 class="section-subtitle">Contact Us</h1>
+        <h4 class="section-title">Contact</h4>
+      </section>
       <!--==================== CONTACT ESHOP ====================-->
     </main>
     <!--==================== MAIN ====================-->
@@ -175,6 +285,8 @@
     <!--==================== FOOTER ====================-->
 
     <!--==================== SCRIPTS ====================-->
+    <script src="./src/assets/import.js/swiper.min.js"></script>
+    <script type="module" src="./src/assets/import.js/slidehome.js"></script>
     <script src="./src/assets/import.js/navbar.js"></script>
     <script src="./src/assets/js/home.js"></script>
     <!--==================== SCRIPTS ====================-->
