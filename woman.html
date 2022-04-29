@@ -12,7 +12,16 @@
 
     <script type="module">
       import { loadNavBar } from "./src/assets/import.js/navbar.js";
+      import { signout } from "./src/firebase.config.js";
+
       loadNavBar();
+
+      const alert = document.getElementById("alert"),
+        popup = document.getElementById("popup-mess");
+
+      document.getElementById("signout").onclick = () => {
+        signout({ alert: alert, popup: popup });
+      };
     </script>
   </head>
   <body>
