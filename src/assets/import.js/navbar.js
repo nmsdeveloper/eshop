@@ -171,7 +171,7 @@ export function loadNavBar() {
   }
 
   window.onscroll = () => {
-    if (window.scrollY >= 300) header.classList.add("is-scroll");
+    if (window.scrollY >= 200) header.classList.add("is-scroll");
     else header.classList.remove("is-scroll");
   };
 
