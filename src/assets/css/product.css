@@ -118,7 +118,7 @@
   position: absolute;
   z-index: 3;
   top: -20%;
-  left: 52%;
+  left: 50%;
   font-size: var(--tiny-size);
   transform: translate(-50%, -50%);
 }
@@ -169,7 +169,7 @@
   }
   60% {
     top: 40%;
-    left: 52%;
+    left: 50%;
   }
   100% {
     top: 40%;
