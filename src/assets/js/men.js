@@ -1,4 +1,5 @@
 import { listProducts } from "/src/assets/import.js/product.js";
+import { addCart } from "/src/assets/import.js/product.js";
 
 const productsContent = document.getElementById("products-content"),
   lists = [
@@ -207,7 +208,7 @@ productsContent.innerHTML = listProducts(lists);
 const filterSearch = document.getElementById("filter-search"),
   filterBtns = document.querySelectorAll(".filter-btn"),
   productsCard = document.querySelectorAll(".products-cards");
-  
+
 filterSearch.onkeyup = (e) => {
   e.preventDefault();
   const searchValue = filterSearch.value.toLowerCase().trim();
@@ -244,3 +245,5 @@ filterBtns.forEach(
       });
     })
 );
+
+addCart();

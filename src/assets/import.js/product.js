@@ -14,12 +14,25 @@ export function listProducts(lst) {
               <h4 class="products-price">
                 ${lst[index].price} Fcfa
               </h4>
-              <div class="products-btn">
-                Add cart <i class="uil uil-shopping-bag products-icon"></i>
-              </div>
+              <button class="products-btn">
+                <span class="add-to-cart">Add to cart</span>
+                <span class="added">Added</span>
+                <i class="uil uil-shopping-cart"></i>
+                <i class="uil uil-box"></i>
+              </button>
             </div>
           </article>
         `;
   }
   return cards;
+}
+
+export function addCart(clsName = "products-btn") {
+  const cartButtons = document.querySelectorAll(".products-btn");
+
+  cartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.add("clicked");
+    });
+  });
 }

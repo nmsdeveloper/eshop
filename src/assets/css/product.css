@@ -85,28 +85,116 @@
   font-weight: var(--font-normal);
   color: var(--subtitle-color);
 }
+
 .products-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--tiny-size);
-  font-weight: var(--font-small);
-  border: 1px solid var(--text-color);
-  padding: 0 0.25rem;
+  position: relative;
+  padding: 0.25rem;
+  width: 125px;
+  height: 30px;
+  border-radius: 0.25rem;
+  background-color: var(--secondary-color);
+  outline: none;
   cursor: pointer;
-  margin-top: 1rem;
+  color: #fff;
   transition: 0.3s ease-in-out;
-}
-.products-icon {
-  margin-left: 1rem;
-  font-size: var(--small-size);
-  color: var(--secondary-color);
-  transition: 0.3s ease-in-out;
+  overflow: hidden;
 }
 .products-btn:hover {
-  color: var(--white-color);
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
 }
+.products-btn:active {
+  transform: scale(0.9);
+}
+
+.products-btn .uil-shopping-cart {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: -10%;
+  font-size: var(--medium-size);
+  transform: translate(-50%, -50%);
+}
+.products-btn .uil-box {
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: 52%;
+  font-size: var(--tiny-size);
+  transform: translate(-50%, -50%);
+}
+.products-btn span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  font-size: var(--tiny-size);
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+.products-btn span.add-to-cart {
+  opacity: 1;
+}
+.products-btn span.added {
+  opacity: 0;
+}
+
+.products-btn.clicked .uil-shopping-cart {
+  animation: cart 1.5s ease-in-out forwards;
+}
+.products-btn.clicked .uil-box {
+  animation: box 1.5s ease-in-out forwards;
+}
+.products-btn.clicked span.add-to-cart {
+  animation: txt1 1.5s ease-in-out forwards;
+}
+.products-btn.clicked span.added {
+  animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+  0% {
+    left: -10%;
+  }
+  40%,
+  60% {
+    left: 50%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+@keyframes box {
+  0%,
+  40% {
+    top: -20%;
+  }
+  60% {
+    top: 40%;
+    left: 52%;
+  }
+  100% {
+    top: 40%;
+    left: 112%;
+  }
+}
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes txt2 {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /*==================== PRODUCTS ====================*/
 
 /*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
@@ -139,6 +227,9 @@
     justify-content: center;
     flex-direction: row;
     column-gap: 0.25rem;
+  }
+  .products-btn {
+    width: 100px;
   }
 }
 /*==================== @MEDIAQUERY - @MAXWIDTH:467 ==================== */

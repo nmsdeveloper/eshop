@@ -1,4 +1,5 @@
-import { listProducts } from "./product.js";
+import { addCart } from "/src/assets/import.js/product.js";
+
 const listsWoman = [
     {
       type: "dress",
@@ -191,7 +192,7 @@ const wrapperMen = document.getElementById("wrapper-men"),
   wrapperChild = document.getElementById("wrapper-child"),
   slideMore = document.querySelectorAll(".slide-title");
 
-function wrapper(cnt, list) {
+function wrapper(cnt, list, clsName) {
   let cards = "";
   for (let i = 0; i < list.length; i++) {
     cards += `
@@ -208,9 +209,12 @@ function wrapper(cnt, list) {
             <h4 class="products-price">
               ${list[i].price} Fcfa
             </h4>
-            <div class="products-btn">
-              Add cart <i class="uil uil-shopping-bag products-icon"></i>
-            </div>
+            <button class="products-btn ${clsName}">
+              <span class="add-to-cart">Add to cart</span>
+              <span class="added">Added</span>
+              <i class="uil uil-shopping-cart"></i>
+              <i class="uil uil-box"></i>
+            </button>
           </div>
         </article>
       </div>
@@ -218,9 +222,13 @@ function wrapper(cnt, list) {
   }
   return (cnt.innerHTML = cards);
 }
-wrapper(wrapperMen, listsMen);
-wrapper(wrapperWoman, listsWoman);
-wrapper(wrapperChild, listsChild);
+wrapper(wrapperMen, listsMen, "products-btn-men");
+wrapper(wrapperWoman, listsWoman, "products-btn-woman");
+wrapper(wrapperChild, listsChild, "products-btn-child");
+
+addCart("products-btn-men");
+addCart("products-btn-woman");
+addCart("products-btn-child");
 
 slideMore[0].onclick = () => {
   window.location.href = "./men.html";

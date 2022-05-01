@@ -1,4 +1,5 @@
 import { listProducts } from "/src/assets/import.js/product.js";
+import { addCart } from "/src/assets/import.js/product.js";
 
 const productsContent = document.getElementById("products-content"),
   lists = [
@@ -199,3 +200,5 @@ filterBtns.forEach(
       });
     })
 );
+
+addCart();
