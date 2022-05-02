@@ -41,8 +41,8 @@ export function loadNavBar() {
         </ul>
 
         <div class="nav-profile">
-          <i class="uil uil-shopping-basket uil-icon"></i>
-          <i id="nav-authen" class="uil uil-user uil-icon"></i>
+          <i class="uil uil-shopping-basket"></i>
+          <i id="nav-authen" class="uil uil-user user-cnt"></i>
         </div>
 
         <div id="nav-close" class="nav-close">

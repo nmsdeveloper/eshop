@@ -128,15 +128,25 @@
   flex-direction: row;
   column-gap: 2rem;
 }
-.uil-icon {
+.nav-profile i {
   font-size: var(--normal-size);
   color: var(--text-color);
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-.uil-icon:hover {
+.nav-profile i:hover {
   color: var(--secondary-color);
 }
+#nav-authen.user-cnt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid var(--text-color);
+}
+
 .signout {
   width: 100%;
   height: 100%;
