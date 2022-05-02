@@ -3,7 +3,7 @@ const slogansImg = document.querySelectorAll(".slogans-img");
 class Effect {
   scroll(callback) {
     window.requestAnimationFrame(callback) ||
-      function () {
+      function (callback) {
         window.setTimeout(callback, 1000 / 60);
       };
   }
@@ -45,16 +45,6 @@ class Effect {
   }
 
   initialized({ elements }) {
-    // slogansImg.forEach((element) => {
-    //   element.style = `
-    //         opacity: 0;
-    //         transform: translateX(-5rem) rotateZ(-10deg);
-    //         transition: transform 4.2s 0.45s cubic-bezier(0, 1, 0.3, 1),
-    //             opacity 0.5s 0.45s ease-out;
-    //         will-change: transform, opacity;
-    //     `;
-    // });
-
     this.loop({ elements: elements });
   }
 }
