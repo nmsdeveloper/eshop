@@ -44,6 +44,43 @@
 }
 /*==================== HEAD ====================*/
 
+/*==================== SLIDER ====================*/
+.home-slide {
+  width: 100%;
+  height: 50vh;
+}
+.slide-title {
+  display: flex;
+  align-items: center;
+  font-size: var(--small-size);
+  color: var(--primary-color);
+}
+.slide-title i {
+  margin-left: 0.5rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev i,
+.swiper-button-next i {
+  font-size: var(--big-size);
+  color: var(--subtitle-color);
+  transition: 0.5s ease-in-out;
+}
+.swiper-button-prev i:hover,
+.swiper-button-next i:hover {
+  color: var(--primary-color);
+}
+/*==================== SLIDER ====================*/
+
 /*==================== GOSHOP ====================*/
 .goshop {
   background-color: var(--body-color);
@@ -97,93 +134,75 @@
 
 /*==================== SLOGANS ====================*/
 .slogans {
-  min-height: auto;
-  background-color: var(--dark-color);
+  width: 100%;
+  min-height: 100vh;
 }
 .slogans-container {
-  display: flex;
-  flex-direction: column;
-}
-.slogans-content {
-  display: flex;
-  flex-direction: row;
-  column-gap: 7rem;
-  justify-items: center;
-  justify-content: center;
-  justify-self: center;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
+  justify-items: center;
+  padding: 2rem 4rem;
 }
-.slogan-card-w {
-  width: 500px;
-  height: 350px;
-  z-index: var(--z-tooltip);
-  opacity: 0.5;
+
+.slogans-img {
+  position: relative;
+  width: 275px;
 }
-.slogan-card-h {
-  width: 350px;
-  height: 500px;
+.slogans-img img {
+  filter: drop-shadow(10px 10px 10px #2d2d2d);
 }
-.slogan-mess {
+.slogans-img img:nth-child(1) {
+  filter: none;
+}
+
+.slogans-back-left,
+.slogans-back-right {
   position: absolute;
-  text-align: center;
-  background: linear-gradient(var(--subtitle-color), var(--text-color));
+  z-index: -1;
+  width: 200px;
+  height: 250px;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.slogans-back-left {
+  left: 0;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 10rem;
+  background-color: var(--subtitle-color);
+}
+.slogans-back-right {
+  right: 0;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 2rem;
+  background-color: var(--text-color);
+}
+.slogans-mess {
+  font-size: var(--normal-size);
+  font-weight: var(--font-bold);
+  background: linear-gradient(var(--title-color), var(--subtitle-color));
   -moz-background-clip: text;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  opacity: 0.7;
-  font-size: var(--big-size);
-  font-weight: var(--font-bold);
-}
-.scroll-top-1 {
-  transform: translateY(-7rem);
-  column-gap: 2rem;
-}
-.scroll-top-2 {
-  transform: translateY(-14rem);
-  column-gap: 6rem;
-}
-
-.slogans-social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-7rem);
-  width: 100%;
-  height: 15vh;
-  column-gap: 3rem;
-}
-.slogans-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--subtitle-color);
-  font-size: var(--medium-size);
-  font-weight: var(--font-bold);
-  opacity: 0.2;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-.slogans-link i {
-  font-size: 3rem;
-  margin-right: 1rem;
-}
-.slogans-link:hover {
-  opacity: 0.7;
 }
 
 .slogans-bottom {
-  width: 100%;
-  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/design/slogans\ \(7\).jpg");
-  background-size: cover;
+  width: 100%;
+  height: 500px;
+  background-image: url("../images/design/design\ \(11\).jpg");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.mess-bottom {
-  opacity: 0.6;
+.bottom-mess {
+  font-size: calc(var(--big-size) + 5rem);
+  font-weight: var(--font-bold);
+  opacity: 0.5;
   color: var(--body-color);
 }
 /*==================== SLOGANS ====================*/
@@ -222,34 +241,6 @@
   /*==================== GOSHOP ====================*/
 
   /*==================== SLOGANS ====================*/
-  .slogans-content {
-    column-gap: 4rem;
-  }
-
-  .slogan-card-w {
-    width: 400px;
-    height: 250px;
-  }
-  .slogan-card-h {
-    width: 250px;
-    height: 400px;
-  }
-
-  .slogan-mess {
-    font-size: calc(var(--medium-size) + 1rem);
-  }
-
-  .slogans-social {
-    height: 10vh;
-    column-gap: 2rem;
-  }
-  .slogans-link {
-    font-size: var(--small-size);
-  }
-  .slogans-link i {
-    font-size: 2.5rem;
-    margin-right: 1rem;
-  }
   /*==================== SLOGANS ====================*/
 }
 /*==================== @MEDIAQUERY - @MAXWIDTH:767 ====================*/
@@ -274,6 +265,13 @@
   }
   /*==================== HEAD ====================*/
 
+  /*==================== SLIDER ====================*/
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+  /*==================== SLIDER ====================*/
+
   /*==================== GOSHOP ===========2========*/
   .goshop-card {
     width: 150px;
@@ -295,37 +293,6 @@
   /*==================== GOSHOP ====================*/
 
   /*==================== SLOGANS ====================*/
-  .slogans-content {
-    column-gap: 2rem;
-  }
-
-  .slogan-card-w {
-    width: 300px;
-    height: 150px;
-  }
-  .slogan-card-h {
-    width: 150px;
-    height: 300px;
-  }
-
-  .slogan-mess {
-    font-size: calc(var(--medium-size) + 0.5rem);
-  }
-
-  .slogans-social {
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 7vh;
-  }
-  .slogans-link i {
-    font-size: 2rem;
-    margin-right: 1rem;
-  }
-
-  .slogans-bottom {
-    height: 400px;
-  }
   /*==================== SLOGANS ====================*/
 }
 /*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/

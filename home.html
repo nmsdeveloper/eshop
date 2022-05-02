@@ -1,3 +1,4 @@
+<!-- Upgrade 5/2/2022 8:15 AM -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,200 +9,8 @@
     <link rel="stylesheet" href="./src/assets/css/bases.styles.css" />
     <link rel="stylesheet" href="./src/assets/css/navbar.css" />
     <link rel="stylesheet" href="./src/assets/css/home.css" />
+    <link rel="stylesheet" href="./src/assets/css/product.css" />
     <title>EShop - Home</title>
-
-    <style>
-      .home-slide {
-        width: 100%;
-        height: 50vh;
-      }
-      .slide-title {
-        display: flex;
-        align-items: center;
-        font-size: var(--small-size);
-        color: var(--primary-color);
-      }
-      .slide-title i {
-        margin-left: 0.5rem;
-      }
-
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      .products-cards {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 1rem;
-        text-align: center;
-        padding: 0.75rem 1rem;
-        transition: 0.3s ease-in-out;
-      }
-      .products-cards:hover {
-        border-radius: 0.5rem;
-        box-shadow: 0 0 10px var(--subtitle-color);
-      }
-
-      .products-img {
-        width: 150px;
-        height: 150px;
-        filter: drop-shadow(5px 5px 0 var(--text-color));
-        transition: 0.3s ease-in-out;
-      }
-
-      .products-name {
-        font-size: var(--smaller-size);
-        font-weight: var(--font-semi-bold);
-        color: var(--title-color);
-      }
-      .products-price {
-        font-size: var(--tiny-size);
-        font-weight: var(--font-normal);
-        color: var(--subtitle-color);
-      }
-
-      .products-btn {
-        position: relative;
-        padding: 0.25rem;
-        width: 125px;
-        height: 30px;
-        border-radius: 0.25rem;
-        background-color: var(--secondary-color);
-        outline: none;
-        cursor: pointer;
-        color: #fff;
-        transition: 0.3s ease-in-out;
-        overflow: hidden;
-      }
-      .products-btn:hover {
-        background-color: var(--primary-color);
-      }
-      .products-btn:active {
-        transform: scale(0.9);
-      }
-
-      .products-btn .uil-shopping-cart {
-        position: absolute;
-        z-index: 2;
-        top: 50%;
-        left: -10%;
-        font-size: var(--medium-size);
-        transform: translate(-50%, -50%);
-      }
-      .products-btn .uil-box {
-        position: absolute;
-        z-index: 3;
-        top: -20%;
-        left: 52%;
-        font-size: var(--tiny-size);
-        transform: translate(-50%, -50%);
-      }
-      .products-btn span {
-        position: absolute;
-        z-index: 3;
-        left: 50%;
-        top: 50%;
-        font-size: var(--tiny-size);
-        color: #fff;
-        transform: translate(-50%, -50%);
-      }
-      .products-btn span.add-to-cart {
-        opacity: 1;
-      }
-      .products-btn span.added {
-        opacity: 0;
-      }
-
-      .products-btn.clicked .uil-shopping-cart {
-        animation: cart 1.5s ease-in-out forwards;
-      }
-      .products-btn.clicked .uil-box {
-        animation: box 1.5s ease-in-out forwards;
-      }
-      .products-btn.clicked span.add-to-cart {
-        animation: txt1 1.5s ease-in-out forwards;
-      }
-      .products-btn.clicked span.added {
-        animation: txt2 1.5s ease-in-out forwards;
-      }
-      @keyframes cart {
-        0% {
-          left: -10%;
-        }
-        40%,
-        60% {
-          left: 50%;
-        }
-        100% {
-          left: 110%;
-        }
-      }
-      @keyframes box {
-        0%,
-        40% {
-          top: -20%;
-        }
-        60% {
-          top: 40%;
-          left: 52%;
-        }
-        100% {
-          top: 40%;
-          left: 112%;
-        }
-      }
-      @keyframes txt1 {
-        0% {
-          opacity: 1;
-        }
-        20%,
-        100% {
-          opacity: 0;
-        }
-      }
-      @keyframes txt2 {
-        0%,
-        80% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-
-      .swiper-button-prev::after,
-      .swiper-button-next::after {
-        content: "";
-      }
-
-      .swiper-button-prev i,
-      .swiper-button-next i {
-        font-size: var(--big-size);
-        color: var(--subtitle-color);
-        transition: 0.5s ease-in-out;
-      }
-      .swiper-button-prev i:hover,
-      .swiper-button-next i:hover {
-        color: var(--primary-color);
-      }
-      /*==================== PRODUCTS ====================*/
-
-      /*==================== @MEDIAQUERY - @MAXWIDTH:467 ====================*/
-      @media screen and (max-width: 467px) {
-        .products-btn {
-          width: 100px;
-        }
-
-        .swiper-button-prev,
-        .swiper-button-next {
-          display: none;
-        }
-      }
-      /*==================== @MEDIAQUERY - @MAXWIDTH:467 ==================== */
-    </style>
 
     <script type="module">
       import { loadNavBar } from "./src/assets/import.js/navbar.js";
@@ -227,7 +36,7 @@
       <!--==================== HEAD ====================-->
       <section class="head section">
         <div class="head-img">
-          <img src="./src/assets/images/design/design (4).png" alt="" />
+          <img src="./src/assets/images/design/design (2).png" alt="" />
         </div>
         <div class="head-data">
           <div class="head-header">
@@ -297,7 +106,7 @@
               </div>
             </div>
           </div>
-          <img src="./src/assets/images/design/design (7).png" alt="" />
+          <img src="./src/assets/images/design/design (3).png" alt="" />
         </div>
       </section>
       <!--==================== GOSHOP ====================-->
@@ -324,57 +133,65 @@
       <!--==================== SOME CLOTHING WOMANS ====================-->
 
       <!--==================== SLOGANS ====================-->
-      <section class="slogans section">
+      <section class="slogans">
         <div class="slogans-container">
-          <div class="slogans-content">
-            <div class="slogan-card-h">
-              <img src="./src/assets/images/design/slogans (1).jpg" alt="" />
-            </div>
-            <span class="slogan-mess"
-              >Un monde de liberté et de beauté inspiré</span
-            >
-            <div class="slogan-card-w">
-              <img src="./src/assets/images/design/slogans (4).jpg" alt="" />
-            </div>
+          <div class="slogans-img">
+            <div class="slogans-back-left"></div>
+            <img src="./src/assets/images/design/design (4).png" alt="" />
           </div>
-
-          <div class="slogans-content scroll-top-1">
-            <div class="slogan-card-w">
-              <img src="./src/assets/images/design/slogans (2).jpg" alt="" />
-            </div>
-            <span class="slogan-mess">par les vibrations de </span>
-            <div class="slogan-card-h">
-              <img src="./src/assets/images/design/slogans (3).jpg" alt="" />
-            </div>
+          <span class="slogans-mess"
+            >Un monde de liberté et de beauté inspiré par les vibrations de nos
+            cultures africaines.
+          </span>
+          <span class="slogans-mess">
+            Restez neutre. <br />
+            La clé d'un style sans effort réside dans des couches d'essentiels
+            de garde-robe dans des tons doux.
+          </span>
+          <div class="slogans-img">
+            <div class="slogans-back-right"></div>
+            <img src="./src/assets/images/design/design (6).png" alt="" />
           </div>
-
-          <div class="slogans-content scroll-top-2">
-            <div class="slogan-card-h">
-              <img src="./src/assets/images/design/slogans (5).jpg" alt="" />
-            </div>
-            <span class="slogan-mess">nos cultures africaines.</span>
-            <div class="slogan-card-w scroll-right-2">
-              <img src="./src/assets/images/design/slogans (6).jpg" alt="" />
-            </div>
+          <div class="slogans-img">
+            <div class="slogans-back-left"></div>
+            <img src="./src/assets/images/design/design (5).png" alt="" />
           </div>
-
-          <div class="slogans-social">
-            <a href="#" class="slogans-link">
-              <i class="uil uil-instagram"></i>EShop - IG
-            </a>
-
-            <a href="#" class="slogans-link">
-              <i class="uil uil-facebook-f"></i>EShop - FBK
-            </a>
-
-            <a href="#" class="slogans-link">
-              <i class="uil uil-snapchat-ghost"></i>EShop - SNAP
-            </a>
+          <span class="slogans-mess">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque eum
+            fuga vitae. Incidunt doloribus at aliquam dicta. Placeat modi rem
+          </span>
+          <span class="slogans-mess">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque eum
+            fuga vitae. Incidunt doloribus at aliquam dicta. Placeat modi rem
+          </span>
+          <div class="slogans-img">
+            <div class="slogans-back-right"></div>
+            <img src="./src/assets/images/design/design (7).png" alt="" />
           </div>
-
-          <div id="slogans-bottom" class="slogans-bottom">
-            <span class="slogan-mess mess-bottom">E - SHOPPING</span>
+          <div class="slogans-img">
+            <img src="./src/assets/images/design/design (8).png" alt="" />
           </div>
+          <span class="slogans-mess">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque eum
+            fuga vitae. Incidunt doloribus at aliquam dicta. Placeat modi rem
+          </span>
+          <span class="slogans-mess">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque eum
+            fuga vitae. Incidunt doloribus at aliquam dicta. Placeat modi rem
+          </span>
+          <div class="slogans-img">
+            <img src="./src/assets/images/design/design (9).png" alt="" />
+          </div>
+          <div class="slogans-img">
+            <img src="./src/assets/images/design/design (10).png" alt="" />
+          </div>
+          <span class="slogans-mess">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque eum
+            fuga vitae. Incidunt doloribus at aliquam dicta. Placeat modi rem
+          </span>
+        </div>
+        <div class="slogans-bottom">
+          <div class="bottom-mess">E-SHOPPING</div>
         </div>
       </section>
       <!--==================== SLOGANS ====================-->
