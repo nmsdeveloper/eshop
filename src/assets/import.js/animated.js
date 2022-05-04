@@ -1,8 +1,3 @@
-const slogansImg = document.querySelectorAll(".slogans-img");
-const headImg = document.querySelectorAll(".goshop-card");
-
-// if (window.getComputedStyle(headImg[2]).getPropertyValue("transform") == 'none')
-
 class EshopAnim {
   constructor({
     position = "top",
@@ -11,7 +6,7 @@ class EshopAnim {
     ease = 0.5,
     loop = true,
   } = {}) {
-    this.objects;
+    this.objects = [];
 
     this.translate = translate;
     this.transformX = [];
@@ -25,21 +20,46 @@ class EshopAnim {
     this.req = window.requestAnimationFrame;
     this.loop = loop;
     this.anim = 0;
+  }
 
-    this.reqPair = window.requestAnimationFrame;
-    this.reqOdd = window.requestAnimationFrame;
-    this.animPair = 0;
+  loading({ progress, preloader, title, page, time }) {
+    const preload = document.getElementById(`${preloader}`);
+    document.querySelector(`.${progress}`).style = `
+  animation: progress ${time}s linear;
+  `;
+    document.querySelectorAll(`#${preloader} div`).forEach((c) => {
+      c.style = `animation: opacity ${time}s linear`;
+    });
+    setTimeout(() => {
+      preload.style = `animation: heightAnim ${time / 2}s linear`;
+
+      document.querySelector(`.${title}`).style = `animation: title ${
+        time / 3
+      }s linear;`;
+    }, time * 1000);
+
+    setTimeout(() => {
+      preload.style.display = "none";
+    }, time * 1000 + 2500);
+
+    setTimeout(() => {
+      window.location.href = page;
+    }, time * 1000 + 2700);
   }
 
   currTranfrom(elements) {
     const current = [];
-    elements.forEach((element) => {
-      const style = window.getComputedStyle(element),
-        trans = style.getPropertyValue("transform");
+    elements.forEach((obj) => {
+      obj.forEach((element) => {
+        const style = window.getComputedStyle(element),
+          trans = style.getPropertyValue("transform");
 
-      const values =
-        trans == "none" ? [1, 0, 0, 1, 0, 0] : trans.match(/-?\d+\.?\d+|\d+/g);
-      current.push([values[4], values[5]]);
+        const values =
+          trans == "none"
+            ? [1, 0, 0, 1, 0, 0]
+            : trans.match(/-?\d+\.?\d+|\d+/g);
+        current.push([values[4], values[5]]);
+      });
     });
 
     return current;
@@ -67,21 +87,22 @@ class EshopAnim {
   }
 
   animation(elements) {
-    elements.forEach((element, i) => {
-      if (this.viewport(element)) {
-        element.style = `
+    elements.forEach((obj) => {
+      obj.forEach((element, i) => {
+        if (this.viewport(element)) {
+          element.style = `
           opacity: 1;
           transform: matrix(1, 0, 0, 1, ${this.transformX[i]}, ${this.transformY[i]});
           transition: transform ${this.delay}s ${this.ease}s cubic-bezier(0, 1, 0.3, 1),
             opacity 0.${this.delay}s ${this.ease}s ease-out;
           will-change: transform, opacity;
         `;
-        if (!this.loop) {
-          this.anim++;
-          window.cancelAnimationFrame(this.req);
-        }
-      } else {
-        element.style = `
+          if (!this.loop) {
+            this.anim++;
+            window.cancelAnimationFrame(this.req);
+          }
+        } else {
+          element.style = `
           opacity: 0;
           transform: matrix(1, 0, 0, 1, ${
             this.position === "left"
@@ -98,111 +119,94 @@ class EshopAnim {
               : this.transformY[i]
           });
         `;
-        this.anim = 0;
-      }
+          this.anim = 0;
+        }
+      });
     });
 
     if (this.anim === this.objects.length) return;
     this.req = this.scroll(() => this.animation(elements));
   }
 
-  pair({ elements, translate, rotate, delay = 5, ease = 0.5, loop = false }) {
-    elements.forEach((element, i) => {
+  pair({ elements, translate, rotate, delay = 5, ease = 0.5 }) {
+    document.querySelectorAll(`.${elements}`).forEach((element, i) => {
       if (i % 2 == 0) {
         if (this.viewport(element)) {
           element.style = `
-      opacity: 1;
-      transform: translateX(${translate}rem) rotateZ(${rotate}deg);
-          transition: transform ${delay}s ${ease}s cubic-bezier(0, 1, 0.3, 1),
-            opacity 0.${delay}s ${ease}s ease-out;
-          will-change: transform, opacity;
-        `;
-          if (!loop) {
-            this.animPair++;
-            window.cancelAnimationFrame(this.reqPair);
-          }
+            opacity: 1;
+            transform: translateX(${translate}rem) rotateZ(${rotate}deg);
+            transition: transform ${delay}s ${ease}s cubic-bezier(0, 1, 0.3, 1),
+              opacity 0.${delay}s ${ease}s ease-out;
+            will-change: transform, opacity;
+          `;
         } else {
           element.style = `
             opacity: 0;
             transform: translateX(-5rem) rotateZ(-10deg);
-            `;
-          this.animPair = 0;
+          `;
         }
       }
     });
 
-    if (this.animPair === elements.length) return;
+    if (translate <= 0) {
+      translate++;
+    }
+    if (rotate <= 0) {
+      rotate++;
+    }
 
-    window.setTimeout(() => {
-      if (translate <= 0) {
-        translate++;
-      }
-      if (rotate <= 0) {
-        rotate++;
-      }
-
-      this.reqPair = this.scroll(() =>
-        this.pair({
-          elements,
-          translate,
-          rotate,
-          delay,
-          ease,
-          loop,
-        })
-      );
-    });
+    this.scroll(() =>
+      this.pair({
+        elements,
+        translate,
+        rotate,
+        delay,
+        ease,
+      })
+    );
   }
-  odd({ translate, rotate }) {
-    let anim = 1;
-    elements.forEach((element, i) => {
+  odd({ elements, translate, rotate, delay = 5, ease = 0.5 }) {
+    document.querySelectorAll(`.${elements}`).forEach((element, i) => {
       if (i % 2 != 0) {
         if (this.viewport(element)) {
           element.style = `
-      opacity: 1;
-      transform: translateX(${translate}rem) rotateZ(${rotate}deg);
-          transition: transform ${delay}s ${ease}s cubic-bezier(0, 1, 0.3, 1),
-            opacity 0.${delay}s ${ease}s ease-out;
-          will-change: transform, opacity;
-        `;
-          if (!loop) {
-            anim--;
-            window.cancelAnimationFrame(this.reqOdd);
-          }
+            opacity: 1;
+            transform: translateX(${translate}rem) rotateZ(${rotate}deg);
+            transition: transform ${delay}s ${ease}s cubic-bezier(0, 1, 0.3, 1),
+              opacity 0.${delay}s ${ease}s ease-out;
+            will-change: transform, opacity;
+          `;
         } else {
           element.style = `
             opacity: 0;
             transform: translateX(5rem) rotateZ(10deg);
-            `;
+          `;
         }
       }
     });
 
-    if (anim === 0) return;
+    if (translate >= 0) {
+      translate--;
+    }
+    if (rotate >= 0) {
+      rotate--;
+    }
 
-    window.setTimeout(() => {
-      if (translate >= 0) {
-        translate--;
-      }
-      if (rotate >= 0) {
-        rotate--;
-      }
-
-      this.reqOdd = this.scroll(() =>
-        this.odd({
-          elements,
-          translate,
-          rotate,
-          delay,
-          ease,
-          loop,
-        })
-      );
-    });
+    this.scroll(() =>
+      this.odd({
+        elements,
+        translate,
+        rotate,
+        delay,
+        ease,
+      })
+    );
   }
 
   initialized({ elements }) {
-    this.objects = document.querySelectorAll(`.${elements}`);
+    elements.forEach((el) => {
+      this.objects.push(document.querySelectorAll(`.${el}`));
+    });
 
     const transform = this.currTranfrom(this.objects);
     transform.forEach((curr) => {
@@ -212,29 +216,4 @@ class EshopAnim {
 
     this.animation(this.objects);
   }
-
-  initializedPairOdd({ elements }) {
-    const objects = document.querySelectorAll(`.${elements}`);
-
-    this.pair({ elements: objects, translate: -5, rotate: -10 });
-  }
 }
-
-const eshopAnim = new EshopAnim({
-  position: "left",
-  translate: 200,
-  delay: 5,
-  ease: 0.5,
-  loop: false,
-});
-
-eshopAnim.initialized({ elements: "goshop-card" });
-
-const slogansAnim = new EshopAnim();
-slogansAnim.initializedPairOdd({
-  elements: "slogans-img",
-});
-// slogansAnim.odd({
-//   translate: 5,
-//   rotate: 10,
-// });

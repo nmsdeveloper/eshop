@@ -32,3 +32,49 @@ function textRemove() {
   }
 }
 textWrite();
+
+const leftAnim = new EshopAnim({
+  position: "left",
+  translate: 200,
+});
+const rightAnim = new EshopAnim({
+  position: "right",
+  translate: 200,
+  loop: false,
+});
+const topAnim = new EshopAnim({
+  translate: 200,
+});
+
+const bottomAnim = new EshopAnim({
+  position: "bottom",
+  translate: 200,
+});
+
+leftAnim.initialized({
+  elements: ["goshop-card", "bottom-mess", "head-subtitle", "footer-logo"],
+});
+rightAnim.initialized({
+  elements: [
+    "goshop-container img",
+    "head-title",
+    "footer-copyright",
+    "footer-menu",
+    "footer-legacy",
+    "footer-contact",
+  ],
+});
+topAnim.initialized({ elements: ["head-img"] });
+bottomAnim.initialized({ elements: ["section-subtitle", "section-title"] });
+
+const slogansAnim = new EshopAnim();
+slogansAnim.pair({
+  elements: "slogans-img",
+  translate: -5,
+  rotate: -10,
+});
+slogansAnim.odd({
+  elements: "slogans-img",
+  translate: 5,
+  rotate: 10,
+});

@@ -79,7 +79,7 @@ export function loadNavBar() {
 
         <div class="footer-legacy">
           <span class="footer-title">LEGAL & PRIVACY</span>
-          <ul class="footer-menu">
+          <ul class="footer-list">
             <li class="footer-item">
               <a href="./cookies.html" target="__blank" class="footer-link">
                 Cookie Policy
@@ -108,7 +108,7 @@ export function loadNavBar() {
 
         <div class="footer-contact">
           <span class="footer-title">ESHOP CONTACT</span>
-          <ul class="footer-menu">
+          <ul class="footer-list">
             <li class="footer-item">
               <a href="#" class="footer-link">
                 <i class="uil uil-instagram"></i>EShop - IG

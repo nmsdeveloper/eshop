@@ -177,6 +177,7 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 0.5rem;
+  overflow-x: hidden;
 }
 .footer-container {
   padding: 1rem 2.5rem;
