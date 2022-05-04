@@ -11,6 +11,7 @@ class EshopAnim {
     this.translate = translate;
     this.transformX = [];
     this.transformY = [];
+    this.opacity = [];
 
     this.position = position;
 
@@ -64,6 +65,21 @@ class EshopAnim {
 
     return current;
   }
+  currOpacity(elements) {
+    const current = [];
+    elements.forEach((obj) => {
+      obj.forEach((element) => {
+        const opa = window
+          .getComputedStyle(element)
+          .getPropertyValue("opacity");
+
+        const values = opa == "none" ? 1 : opa;
+        current.push([values]);
+      });
+    });
+
+    return current;
+  }
 
   scroll(callback) {
     window.requestAnimationFrame(callback) || window.setTimeout(callback);
@@ -91,7 +107,7 @@ class EshopAnim {
       obj.forEach((element, i) => {
         if (this.viewport(element)) {
           element.style = `
-          opacity: 1;
+          opacity: ${this.opacity};
           transform: matrix(1, 0, 0, 1, ${this.transformX[i]}, ${this.transformY[i]});
           transition: transform ${this.delay}s ${this.ease}s cubic-bezier(0, 1, 0.3, 1),
             opacity 0.${this.delay}s ${this.ease}s ease-out;
@@ -209,9 +225,14 @@ class EshopAnim {
     });
 
     const transform = this.currTranfrom(this.objects);
+    const opa = this.currTranfrom(this.objects);
+
     transform.forEach((curr) => {
       this.transformX.push(curr[0]);
       this.transformY.push(curr[1]);
+    });
+    opa.forEach((curr) => {
+      this.opacity.push(curr);
     });
 
     this.animation(this.objects);

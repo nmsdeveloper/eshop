@@ -206,14 +206,8 @@
 .bottom-mess {
   font-size: calc(var(--big-size) + 5rem);
   font-weight: var(--font-bold);
-  background: linear-gradient(
-    rgb(255, 255, 255),
-    rgba(255, 255, 255, 0.3)
-  );
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  opacity: 0.5;
+  color: var(--body-color);
 }
 /*==================== SLOGANS ====================*/
 
