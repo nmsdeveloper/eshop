@@ -52,12 +52,19 @@ const bottomAnim = new EshopAnim({
 });
 
 leftAnim.initialized({
-  elements: ["goshop-card", "bottom-mess", "head-subtitle", "footer-logo"],
+  elements: [
+    "head-subtitle",
+    "goshop-card",
+    "slogans-left",
+    "bottom-mess",
+    "footer-logo",
+  ],
 });
 rightAnim.initialized({
   elements: [
-    "goshop-container img",
     "head-title",
+    "goshop-container img",
+    "slogans-right",
     "footer-copyright",
     "footer-menu",
     "footer-legacy",
@@ -66,15 +73,3 @@ rightAnim.initialized({
 });
 topAnim.initialized({ elements: ["head-img"] });
 bottomAnim.initialized({ elements: ["section-subtitle", "section-title"] });
-
-const slogansAnim = new EshopAnim();
-slogansAnim.pair({
-  elements: "slogans-img",
-  translate: -5,
-  rotate: -10,
-});
-slogansAnim.odd({
-  elements: "slogans-img",
-  translate: 5,
-  rotate: 10,
-});

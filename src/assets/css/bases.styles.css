@@ -59,6 +59,7 @@ body {
 body {
   font-family: var(--body-font);
   background-color: var(--body-color);
+  overflow-x: hidden;
 }
 
 ul {

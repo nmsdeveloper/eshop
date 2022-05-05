@@ -183,7 +183,7 @@
 }
 .slogans-mess {
   width: 50%;
-  font-size: var(--normal-size);
+  font-size: var(--medium-size);
   font-weight: var(--font-bold);
   background: linear-gradient(var(--title-color), var(--subtitle-color));
   -moz-background-clip: text;
