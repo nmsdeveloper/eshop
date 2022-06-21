@@ -1,4 +1,4 @@
-import { addCart } from "./product";
+import { addCart } from "./product.js";
 
 const listsWoman = [
     {

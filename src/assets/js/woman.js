@@ -1,4 +1,4 @@
-import { listProducts, addCart } from "../import.js/product";
+import { listProducts, addCart } from "../import.js/product.js";
 
 const productsContent = document.getElementById("products-content"),
   lists = [
