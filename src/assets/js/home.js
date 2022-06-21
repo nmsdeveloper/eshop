@@ -54,7 +54,6 @@ const bottomAnim = new EshopAnim({
 leftAnim.initialized({
   elements: [
     "head-subtitle",
-    "goshop-card",
     "slogans-left",
     "bottom-mess",
     "footer-logo",

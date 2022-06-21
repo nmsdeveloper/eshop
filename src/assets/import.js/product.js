@@ -31,8 +31,8 @@ export function addCart(clsName = "products-btn") {
   const cartButtons = document.querySelectorAll(".products-btn");
 
   cartButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.onclick = () => {
       button.classList.add("clicked");
-    });
+    };
   });
 }

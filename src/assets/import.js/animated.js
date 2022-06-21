@@ -150,7 +150,7 @@ class EshopAnim {
     });
 
     const transform = this.currTranfrom(this.objects);
-    const opa = this.currTranfrom(this.objects);
+    const opa = this.currOpacity(this.objects);
 
     transform.forEach((curr) => {
       this.transformX.push(curr[0]);
